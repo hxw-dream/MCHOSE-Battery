@@ -1,0 +1,26 @@
+# 白名单模式: 默认全部忽略, 只跟踪发布所需的文件
+/*
+
+# 核心程序与文档
+!/.gitignore
+!/README.md
+!/LICENSE
+!/battery.py
+!/tray_app.py
+!/start.bat
+
+# tools/ 里只收录协议验证与抓包方法脚本(不含官方 JS、浏览器配置、一次性脚本)
+!/tools/
+/tools/*
+!/tools/probe_mouse_m.py
+!/tools/probe_kb_exact.py
+!/tools/probe_kb_sweep.py
+!/tools/probe_kb_listen3min.py
+!/tools/cdp_kb_capture7.py
+!/tools/kb_patch.js
+!/tools/kb_capture.log
+
+# 构建产物
+build*/
+dist/
+__pycache__/

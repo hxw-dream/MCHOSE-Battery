@@ -1,0 +1,807 @@
+CZ initialized: Object
+support OffscreenCanvas
+[innerLoadCZSharedData:0] catch script error ErrorEvent
+[innerLoadCZSharedData:0] will call plugins.onError: ErrorEvent
+[innerLoadCZSharedData:0] error handled, will reload
+[innerLoadCZSharedData:1] will call plugins.onSuccess
+[innerLoadCZSharedData:1] got promise result
+[innerLoadCZSharedData:0] reload success, return Object
+[innerLoadCZSharedData:0] got promise result Object
+CZRemoteConfigList modify HidIndexDeviceFilters Array(232)
+CZRemoteConfigList modify KEYBOARD_MODELS Object
+CZRemoteConfigList modify deviceImageMap Object
+CZRemoteConfigList modify deviceList Object
+CZRemoteConfigList modify czDeviceName Array(20)
+trigger: clicked: 连接设备
+CZ initialized: Object
+support OffscreenCanvas
+[innerLoadCZSharedData:0] will call plugins.onSuccess
+[innerLoadCZSharedData:0] got promise result
+CZRemoteConfigList modify HidIndexDeviceFilters Array(232)
+CZRemoteConfigList modify KEYBOARD_MODELS Object
+CZRemoteConfigList modify deviceImageMap Object
+CZRemoteConfigList modify deviceList Object
+CZRemoteConfigList modify czDeviceName Array(20)
+当前版本号: 41b9e2ae
+当前版本时间: 2026-08-27 18:33
+ProfileListProviderFreezer will freeze useChannelValue、useMetaValue、useRuntimeConfigValue、useProfileList before profileList complete loading.
+useSideStillEffectUpgrader confirmed.
+useSide2StillEffectUpgrader confirmed.
+ProfileListProviderFreezer will freeze useChannelValue、useMetaValue、useRuntimeConfigValue、useProfileList before profileList complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileListProviderFreezer will freeze useChannelValue、useMetaValue、useRuntimeConfigValue、useProfileList before profileList complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileListProviderFreezer will freeze useChannelValue、useMetaValue、useRuntimeConfigValue、useProfileList before profileList complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+No target found. Make sure the element you're trying to animate is accessible before creating your animation.
+[ProviderFreezer active]@12: 374.05712890625 ms
+[ProviderFreezer active]@14: 108.575927734375 ms
+useStillEffectUpgrader confirmed.
+[ProviderFreezer active]@18: 166.072021484375 ms
+[ProviderFreezer active]@19: 185.133056640625 ms
+useGifEffectUpgrader confirmed.
+metaContextValue: Object
+activeProfileData Object
+activeDeviceContext Object
+当前版本号: 41b9e2ae
+当前版本时间: 2026-08-27 18:33
+ProfileListProviderFreezer will freeze useChannelValue、useMetaValue、useRuntimeConfigValue、useProfileList before profileList complete loading.
+[ProviderFreezer active]@15: 12.85693359375 ms
+useSideStillEffectUpgrader confirmed.
+useSide2StillEffectUpgrader confirmed.
+useStillEffectUpgrader confirmed.
+No target found. Make sure the element you're trying to animate is accessible before creating your animation.
+useGifEffectUpgrader confirmed.
+ProfileListProviderFreezer will freeze useChannelValue、useMetaValue、useRuntimeConfigValue、useProfileList before profileList complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileListProviderFreezer will freeze useChannelValue、useMetaValue、useRuntimeConfigValue、useProfileList before profileList complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+[ProviderFreezer active]@21: 42.307861328125 ms
+[ProviderFreezer active]@22: 62.16796875 ms
+metaContextValue: Object
+activeProfileData Object
+activeDeviceContext Object
+trigger: no button
+<patched ctx 7 origin=https://www.mchose.com.cn>
+<patched ctx 1 origin=https://www.mchose.com.cn>
+CZ initialized: Object
+support OffscreenCanvas
+[innerLoadCZSharedData:0] will call plugins.onSuccess
+[innerLoadCZSharedData:0] got promise result
+CZRemoteConfigList modify HidIndexDeviceFilters Array(232)
+CZRemoteConfigList modify KEYBOARD_MODELS Object
+CZRemoteConfigList modify deviceImageMap Object
+CZRemoteConfigList modify deviceList Object
+CZRemoteConfigList modify czDeviceName Array(20)
+当前版本号: 41b9e2ae
+当前版本时间: 2026-08-27 18:33
+ProfileListProviderFreezer will freeze useChannelValue、useMetaValue、useRuntimeConfigValue、useProfileList before profileList complete loading.
+useSideStillEffectUpgrader confirmed.
+useSide2StillEffectUpgrader confirmed.
+ProfileListProviderFreezer will freeze useChannelValue、useMetaValue、useRuntimeConfigValue、useProfileList before profileList complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileListProviderFreezer will freeze useChannelValue、useMetaValue、useRuntimeConfigValue、useProfileList before profileList complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileListProviderFreezer will freeze useChannelValue、useMetaValue、useRuntimeConfigValue、useProfileList before profileList complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+No target found. Make sure the element you're trying to animate is accessible before creating your animation.
+[ProviderFreezer active]@12: 374.05712890625 ms
+[ProviderFreezer active]@14: 108.575927734375 ms
+useStillEffectUpgrader confirmed.
+[ProviderFreezer active]@18: 166.072021484375 ms
+[ProviderFreezer active]@19: 185.133056640625 ms
+useGifEffectUpgrader confirmed.
+metaContextValue: [object Object]
+activeProfileData [object Object]
+activeDeviceContext [object Object]
+当前版本号: 41b9e2ae
+当前版本时间: 2026-08-27 18:33
+ProfileListProviderFreezer will freeze useChannelValue、useMetaValue、useRuntimeConfigValue、useProfileList before profileList complete loading.
+[ProviderFreezer active]@15: 12.85693359375 ms
+useSideStillEffectUpgrader confirmed.
+useSide2StillEffectUpgrader confirmed.
+useStillEffectUpgrader confirmed.
+No target found. Make sure the element you're trying to animate is accessible before creating your animation.
+useGifEffectUpgrader confirmed.
+ProfileListProviderFreezer will freeze useChannelValue、useMetaValue、useRuntimeConfigValue、useProfileList before profileList complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileListProviderFreezer will freeze useChannelValue、useMetaValue、useRuntimeConfigValue、useProfileList before profileList complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+[ProviderFreezer active]@21: 42.307861328125 ms
+[ProviderFreezer active]@22: 62.16796875 ms
+metaContextValue: Object
+activeProfileData Object
+activeDeviceContext Object
+[ProfileData] call method refreshChargingStatus args: 0
+activeProfileData Object
+activeDeviceContext Object
+<patched ctx 10 origin=https://www.mchose.com.cn>
+[KB-patch-installed]
+CZ initialized: Object
+support OffscreenCanvas
+[innerLoadCZSharedData:0] will call plugins.onSuccess
+[innerLoadCZSharedData:0] got promise result
+CZRemoteConfigList modify HidIndexDeviceFilters Array(232)
+CZRemoteConfigList modify KEYBOARD_MODELS Object
+CZRemoteConfigList modify deviceImageMap Object
+CZRemoteConfigList modify deviceList Object
+CZRemoteConfigList modify czDeviceName Array(20)
+<patched ctx 13 origin=https://www.mchose.com.cn>
+[KB-patch-installed]
+当前版本号: 41b9e2ae
+当前版本时间: 2026-08-27 18:33
+ProfileListProviderFreezer will freeze useChannelValue、useMetaValue、useRuntimeConfigValue、useProfileList before profileList complete loading.
+useSideStillEffectUpgrader confirmed.
+useSide2StillEffectUpgrader confirmed.
+ProfileListProviderFreezer will freeze useChannelValue、useMetaValue、useRuntimeConfigValue、useProfileList before profileList complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileListProviderFreezer will freeze useChannelValue、useMetaValue、useRuntimeConfigValue、useProfileList before profileList complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileListProviderFreezer will freeze useChannelValue、useMetaValue、useRuntimeConfigValue、useProfileList before profileList complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+No target found. Make sure the element you're trying to animate is accessible before creating your animation.
+[ProviderFreezer active]@15: 415.0439453125 ms
+useStillEffectUpgrader confirmed.
+[ProviderFreezer active]@17: 102.133056640625 ms
+[ProviderFreezer active]@21: 121.158203125 ms
+[ProviderFreezer active]@22: 148.0478515625 ms
+useGifEffectUpgrader confirmed.
+metaContextValue: Object
+activeProfileData Object
+activeDeviceContext Object
+[page] [KB-patch-installed]
+[page] CZ initialized: Object
+[page] support OffscreenCanvas
+[page] [innerLoadCZSharedData:0] will call plugins.onSuccess
+[page] [innerLoadCZSharedData:0] got promise result
+[page] CZRemoteConfigList modify HidIndexDeviceFilters Array(232)
+[page] CZRemoteConfigList modify KEYBOARD_MODELS Object
+[page] CZRemoteConfigList modify deviceImageMap Object
+[page] CZRemoteConfigList modify deviceList Object
+[page] CZRemoteConfigList modify czDeviceName Array(20)
+[page] [KB-patch-installed]
+[page] 当前版本号: 41b9e2ae
+[page] 当前版本时间: 2026-08-27 18:33
+[page] ProfileListProviderFreezer will freeze useChannelValue、useMetaValue、useRuntimeConfigValue、useProfileList before profileList complete loading.
+[page] useSideStillEffectUpgrader confirmed.
+[page] useSide2StillEffectUpgrader confirmed.
+[page] ProfileListProviderFreezer will freeze useChannelValue、useMetaValue、useRuntimeConfigValue、useProfileList before profileList complete loading.
+[page] ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+[page] ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+[page] ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+[page] ProfileListProviderFreezer will freeze useChannelValue、useMetaValue、useRuntimeConfigValue、useProfileList before profileList complete loading.
+[page] ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+[page] ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+[page] ProfileListProviderFreezer will freeze useChannelValue、useMetaValue、useRuntimeConfigValue、useProfileList before profileList complete loading.
+[page] ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+[page] No target found. Make sure the element you're trying to animate is accessible before creating your animation.
+[page] [ProviderFreezer active]@15: 415.0439453125 ms
+[page] useStillEffectUpgrader confirmed.
+[page] [ProviderFreezer active]@17: 102.133056640625 ms
+[page] [ProviderFreezer active]@21: 121.158203125 ms
+[page] [ProviderFreezer active]@22: 148.0478515625 ms
+[page] useGifEffectUpgrader confirmed.
+[page] metaContextValue: Object
+[page] activeProfileData Object
+[page] activeDeviceContext Object
+[page] [ProfileData] call method refreshChargingStatus args: 0
+[page] activeProfileData Object
+[page] activeDeviceContext Object
+[KB-patch-installed]
+CZ initialized: Object
+support OffscreenCanvas
+[innerLoadCZSharedData:0] will call plugins.onSuccess
+[innerLoadCZSharedData:0] got promise result
+CZRemoteConfigList modify HidIndexDeviceFilters Array(232)
+CZRemoteConfigList modify KEYBOARD_MODELS Object
+CZRemoteConfigList modify deviceImageMap Object
+CZRemoteConfigList modify deviceList Object
+CZRemoteConfigList modify czDeviceName Array(20)
+[KB-patch-installed]
+当前版本号: 41b9e2ae
+当前版本时间: 2026-08-27 18:33
+ProfileListProviderFreezer will freeze useChannelValue、useMetaValue、useRuntimeConfigValue、useProfileList before profileList complete loading.
+useSideStillEffectUpgrader confirmed.
+useSide2StillEffectUpgrader confirmed.
+ProfileListProviderFreezer will freeze useChannelValue、useMetaValue、useRuntimeConfigValue、useProfileList before profileList complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileListProviderFreezer will freeze useChannelValue、useMetaValue、useRuntimeConfigValue、useProfileList before profileList complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileListProviderFreezer will freeze useChannelValue、useMetaValue、useRuntimeConfigValue、useProfileList before profileList complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+No target found. Make sure the element you're trying to animate is accessible before creating your animation.
+[ProviderFreezer active]@15: 415.0439453125 ms
+useStillEffectUpgrader confirmed.
+[ProviderFreezer active]@17: 102.133056640625 ms
+EXC: {}
+[ProviderFreezer active]@21: 121.158203125 ms
+[ProviderFreezer active]@22: 148.0478515625 ms
+useGifEffectUpgrader confirmed.
+metaContextValue: [object Object]
+activeProfileData [object Object]
+activeDeviceContext [object Object]
+[ProfileData] call method refreshChargingStatus args: 0
+activeProfileData [object Object]
+activeDeviceContext [object Object]
+activeDeviceContext [object Object]
+activeDeviceContext [object Object]
+当前版本号: 41b9e2ae
+当前版本时间: 2026-08-27 18:33
+ProfileListProviderFreezer will freeze useChannelValue、useMetaValue、useRuntimeConfigValue、useProfileList before profileList complete loading.
+useSideStillEffectUpgrader confirmed.
+useSide2StillEffectUpgrader confirmed.
+ProfileListProviderFreezer will freeze useChannelValue、useMetaValue、useRuntimeConfigValue、useProfileList before profileList complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileListProviderFreezer will freeze useChannelValue、useMetaValue、useRuntimeConfigValue、useProfileList before profileList complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileListProviderFreezer will freeze useChannelValue、useMetaValue、useRuntimeConfigValue、useProfileList before profileList complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+No target found. Make sure the element you're trying to animate is accessible before creating your animation.
+[ProviderFreezer active]@15: 453.492919921875 ms
+useStillEffectUpgrader confirmed.
+[ProviderFreezer active]@17: 110.112060546875 ms
+EXC: {"type": "object", "subtype": "error", "className": "Error", "description": "Error: abort\n    at c (https://www.mchose.com.cn/cizhou/_next/static/chunks/1288-fd5cc365b4e0e939.js:1:148977)\n    at d (
+[ProviderFreezer active]@21: 127.414794921875 ms
+[ProviderFreezer active]@22: 154.4111328125 ms
+useGifEffectUpgrader confirmed.
+metaContextValue: Object
+activeProfileData Object
+activeDeviceContext Object
+[KB-patch-installed]
+[KB-patch-installed]
+CZ initialized: Object
+support OffscreenCanvas
+[innerLoadCZSharedData:0] will call plugins.onSuccess
+[innerLoadCZSharedData:0] got promise result
+CZRemoteConfigList modify HidIndexDeviceFilters Array(232)
+CZRemoteConfigList modify KEYBOARD_MODELS Object
+CZRemoteConfigList modify deviceImageMap Object
+CZRemoteConfigList modify deviceList Object
+CZRemoteConfigList modify czDeviceName Array(20)
+[KB-patch-installed]
+当前版本号: 41b9e2ae
+当前版本时间: 2026-08-27 18:33
+ProfileListProviderFreezer will freeze useChannelValue、useMetaValue、useRuntimeConfigValue、useProfileList before profileList complete loading.
+useSideStillEffectUpgrader confirmed.
+useSide2StillEffectUpgrader confirmed.
+ProfileListProviderFreezer will freeze useChannelValue、useMetaValue、useRuntimeConfigValue、useProfileList before profileList complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileListProviderFreezer will freeze useChannelValue、useMetaValue、useRuntimeConfigValue、useProfileList before profileList complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileListProviderFreezer will freeze useChannelValue、useMetaValue、useRuntimeConfigValue、useProfileList before profileList complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+No target found. Make sure the element you're trying to animate is accessible before creating your animation.
+[ProviderFreezer active]@15: 411.714111328125 ms
+[ProviderFreezer active]@17: 102.61181640625 ms
+useStillEffectUpgrader confirmed.
+EXC: {"type": "object", "subtype": "error", "className": "Error", "description": "Error: abort\n    at c (https://www.mchose.com.cn/cizhou/_next/static/chunks/1288-fd5cc365b4e0e939.js:1:148977)\n    at d (
+[ProviderFreezer active]@21: 132.0810546875 ms
+[ProviderFreezer active]@22: 153.739990234375 ms
+useGifEffectUpgrader confirmed.
+metaContextValue: Object
+activeProfileData Object
+activeDeviceContext Object
+STATE: {"txt":"返回主页 音乐律动控制面板 缩放律动 缩放键盘 展示律动 展示键盘 恢复默认","devs":["MCHOSE K7 V2 Ultra+ pid=4116 opened=false colls=1/2","MCHOSE K7 V2 Ultra+ pid=4116 opened=true colls=ff0b/c4,ff01/1","MCHOSE K99 V3 2.4G pid=12339 opened=false colls=c/1,1/80,1/c,1/6","MCHOSE K99 V3 2.4G pid=12339 opened=false colls=1/2","MCHOSE K99 V3 2.4G pid=12339 opened=false colls=1/6","MCHOSE K7 V2 Ultra+ pid=4116 opened=false colls=c/1,1/6","MCHOSE K99 V3 2.4G pid=12339 opened=false colls=ff70/71","MCHOSE K99 V3 2.4G pid=12339 opened=false colls=ff31/74","MCHOSE K99 V3 2.4G pid=12339 opened=true colls=1/0"]}
+CLICK: no button
+[KB-patch-installed]
+CZ initialized: Object
+support OffscreenCanvas
+[innerLoadCZSharedData:0] will call plugins.onSuccess
+[innerLoadCZSharedData:0] got promise result
+CZRemoteConfigList modify HidIndexDeviceFilters Array(232)
+CZRemoteConfigList modify KEYBOARD_MODELS Object
+CZRemoteConfigList modify deviceImageMap Object
+CZRemoteConfigList modify deviceList Object
+CZRemoteConfigList modify czDeviceName Array(20)
+[KB-patch-installed]
+当前版本号: 41b9e2ae
+当前版本时间: 2026-08-27 18:33
+ProfileListProviderFreezer will freeze useChannelValue、useMetaValue、useRuntimeConfigValue、useProfileList before profileList complete loading.
+useSideStillEffectUpgrader confirmed.
+useSide2StillEffectUpgrader confirmed.
+ProfileListProviderFreezer will freeze useChannelValue、useMetaValue、useRuntimeConfigValue、useProfileList before profileList complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileListProviderFreezer will freeze useChannelValue、useMetaValue、useRuntimeConfigValue、useProfileList before profileList complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileListProviderFreezer will freeze useChannelValue、useMetaValue、useRuntimeConfigValue、useProfileList before profileList complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+No target found. Make sure the element you're trying to animate is accessible before creating your animation.
+[ProviderFreezer active]@15: 411.714111328125 ms
+[ProviderFreezer active]@17: 102.61181640625 ms
+useStillEffectUpgrader confirmed.
+[ProviderFreezer active]@21: 132.0810546875 ms
+[ProviderFreezer active]@22: 153.739990234375 ms
+useGifEffectUpgrader confirmed.
+metaContextValue: Object
+activeProfileData Object
+activeDeviceContext Object
+[ProfileData] call method refreshChargingStatus args: 1
+activeProfileData Object
+activeDeviceContext Object
+[KB-patch-ready]
+[KB-patch-ready]
+CZ initialized: Object
+support OffscreenCanvas
+[innerLoadCZSharedData:0] will call plugins.onSuccess
+[innerLoadCZSharedData:0] got promise result
+CZRemoteConfigList modify HidIndexDeviceFilters Array(232)
+CZRemoteConfigList modify KEYBOARD_MODELS Object
+CZRemoteConfigList modify deviceImageMap Object
+CZRemoteConfigList modify deviceList Object
+CZRemoteConfigList modify czDeviceName Array(20)
+[KB-patch-ready]
+当前版本号: 41b9e2ae
+当前版本时间: 2026-08-27 18:33
+[KB-open] pid=12339
+[KB-sendReport] rid=0 pid=12339 [85,3,0,56,56,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,3,0,56,38,0,0,0,40,1,48,1,255,255,44,74,97,110,32,49,50,32,50,48,50,54,44,50,48,58,52,49,58,52,55,50,46,52,71,32,68,111,110,103,108,101,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,169,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,169,0,118,1,0,0,0,117,110,107,110,119,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,4,0,56,56,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,4,0,6,56,0,0,0,0,3,0,1,2,3,170,187,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162]
+[KB-sendReport] rid=0 pid=12339 [85,241,0,162,56,104,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,241,0,68,56,104,2,0,91,49,55,56,55,51,54,53,57,52,50,52,57,50,44,49,55,56,55,51,54,53,57,52,50,53,48,51,44,34,53,111,109,108,103,115,118,103,95,109,116,107,99,111,117,109,99,34,93,255,255,255,255,255,255,255]
+[KB-sendReport] rid=0 pid=12339 [85,241,0,166,56,104,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,241,0,210,56,104,6,0,91,49,55,56,55,51,54,53,57,52,50,52,57,50,44,49,55,56,55,51,54,53,57,52,50,53,48,51,44,34,95,48,34,93,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255]
+[KB-sendReport] rid=0 pid=12339 [85,241,0,170,56,104,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,241,0,214,56,104,10,0,91,49,55,56,55,51,54,53,57,52,50,52,57,50,44,49,55,56,55,51,54,53,57,52,50,53,48,51,44,34,95,48,34,93,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255]
+[KB-sendReport] rid=0 pid=12339 [85,241,0,174,56,104,14,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,241,0,218,56,104,14,0,91,49,55,56,55,51,54,53,57,52,50,52,57,50,44,49,55,56,55,51,54,53,57,52,50,53,48,51,44,34,95,48,34,93,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255]
+[KB-sendReport] rid=0 pid=12339 [85,3,0,56,56,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,3,0,56,38,0,0,0,40,1,48,1,255,255,44,74,97,110,32,49,50,32,50,48,50,54,44,50,48,58,52,49,58,52,55,50,46,52,71,32,68,111,110,103,108,101,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,4,0,56,56,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,4,0,6,56,0,0,0,0,3,0,1,2,3,170,187,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162]
+[KB-sendReport] rid=0 pid=12339 [85,241,0,137,56,80,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,241,0,37,56,80,1,0,91,34,105,49,56,110,60,100,101,102,97,117,108,116,79,110,98,111,97,114,100,62,34,44,34,105,49,56,110,60,100,101,102,97,117,108,116,79,110,98,111,97,114,100,62,50,34,44,34,105,49,56,110,60,100,101]
+[KB-sendReport] rid=0 pid=12339 [85,241,0,193,56,136,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,241,0,221,56,136,1,0,102,97,117,108,116,79,110,98,111,97,114,100,62,51,34,44,34,34,93,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255]
+[KB-sendReport] rid=0 pid=12339 [85,241,0,249,56,192,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,241,0,249,56,192,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,241,0,49,56,248,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,241,0,49,56,248,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,241,0,106,56,48,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,241,0,106,56,48,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+ProfileListProviderFreezer will freeze useChannelValue、useMetaValue、useRuntimeConfigValue、useProfileList before profileList complete loading.
+[KB-sendReport] rid=0 pid=12339 [85,8,0,56,56,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,8,0,147,56,0,0,0,16,0,41,16,0,53,16,0,43,16,0,57,16,2,0,16,1,0,16,0,76,16,0,71,16,0,58,16,0,30,16,0,20,16,0,4,16,0,100,16,8,0,16,0,74,16,0,83,16,0,59,16,0,31,16,0]
+[KB-sendReport] rid=0 pid=12339 [85,8,0,112,56,56,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,8,0,130,56,56,0,0,26,16,0,22,16,0,29,16,4,0,16,0,77,16,0,84,16,0,60,16,0,32,16,0,8,16,0,7,16,0,27,16,0,88,16,0,75,16,0,85,16,0,61,16,0,33,16,0,21,16,0,9,16,0,6,0]
+[KB-sendReport] rid=0 pid=12339 [85,8,0,168,56,112,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,8,0,154,56,112,0,0,0,0,16,0,78,16,0,73,16,0,62,16,0,34,16,0,23,16,0,10,16,0,25,128,66,0,16,0,50,16,0,72,16,0,63,16,0,35,16,0,28,16,0,11,16,0,5,16,0,44,16,0,95,16,0,92]
+[KB-sendReport] rid=0 pid=12339 [85,8,0,224,56,168,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,8,0,254,56,168,0,0,16,0,64,16,0,36,16,0,24,16,0,13,16,0,17,0,0,0,16,0,96,16,0,93,16,0,65,16,0,37,16,0,12,16,0,14,16,0,16,0,0,0,16,0,97,16,0,94,16,0,66,16,0,38,16,0]
+[KB-sendReport] rid=0 pid=12339 [85,8,0,24,56,224,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,8,0,2,56,224,0,0,18,16,0,15,16,0,54,16,64,0,16,0,86,16,0,87,16,0,67,16,0,39,16,0,19,16,0,51,16,0,55,240,255,1,16,0,82,16,0,81,16,0,68,16,0,45,16,0,47,16,0,52,16,0,56,16]
+[KB-sendReport] rid=0 pid=12339 [85,8,0,81,56,24,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,8,0,211,56,24,1,0,0,101,16,0,89,16,0,79,16,0,69,16,0,46,16,0,48,16,0,104,16,0,135,16,16,0,16,0,90,16,0,98,16,0,70,16,0,42,16,0,49,16,0,40,16,32,0,16,0,80,16,0,91,16,0,99]
+[KB-sendReport] rid=0 pid=12339 [85,8,0,129,48,80,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,8,0,145,48,80,1,0,0,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,0,0,0,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,8,0,58,56,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,8,0,63,56,0,2,0,240,8,0,240,31,0,16,0,43,16,0,57,16,2,0,16,1,0,240,47,0,16,0,71,48,112,0,240,31,1,16,0,20,240,4,0,16,0,100,240,2,0,240,160,0,16,0,83,48,111,0,240,31,2,16,0]
+[KB-sendReport] rid=0 pid=12339 [85,8,0,114,56,56,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,8,0,76,56,56,2,0,26,240,5,0,16,0,29,16,4,0,240,176,0,16,0,84,240,71,0,240,31,3,16,0,8,16,0,7,16,0,27,16,0,88,16,0,75,16,0,85,240,70,0,16,0,33,16,0,21,16,0,9,16,0,6,0]
+[KB-sendReport] rid=0 pid=12339 [85,8,0,170,56,112,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,8,0,29,56,112,2,0,0,0,16,0,78,16,0,73,16,0,62,16,0,34,16,0,23,16,0,10,16,0,25,128,66,0,16,0,50,16,0,72,16,0,63,16,0,35,16,0,28,16,0,11,240,11,0,16,0,44,16,0,95,240,23,0]
+[KB-sendReport] rid=0 pid=12339 [85,8,0,226,56,168,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,8,0,4,56,168,2,0,48,182,0,16,0,36,16,0,24,16,0,13,16,0,17,0,0,0,240,21,0,16,0,93,48,205,0,16,0,37,16,0,12,16,0,14,16,0,16,0,0,0,16,0,97,240,24,0,48,181,0,16,0,38,16,0]
+[KB-sendReport] rid=0 pid=12339 [85,8,0,26,56,224,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,8,0,57,56,224,2,0,18,16,0,15,16,0,54,16,64,0,16,0,86,16,0,87,48,226,0,16,0,39,16,0,19,240,103,0,16,0,55,240,255,1,240,50,0,240,51,0,48,234,0,240,60,0,240,102,0,240,104,0,16,0,56,16]
+[KB-sendReport] rid=0 pid=12339 [85,8,0,83,56,24,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,8,0,178,56,24,3,0,0,101,16,0,89,240,54,0,48,233,0,240,26,0,240,101,0,16,0,104,16,0,135,16,16,0,240,22,0,16,0,98,16,0,70,16,0,42,240,106,0,16,0,40,240,53,0,240,55,0,16,0,91,16,0,99]
+[KB-sendReport] rid=0 pid=12339 [85,8,0,131,48,80,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,8,0,194,48,80,3,0,0,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,0,0,0,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,8,0,60,56,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,8,0,61,56,0,4,0,16,0,41,16,0,53,16,0,43,16,0,57,16,2,0,16,1,0,16,0,76,16,0,71,48,112,0,16,0,30,16,0,20,16,0,4,16,0,100,16,4,0,16,0,74,16,0,83,48,111,0,16,0,31,16,0]
+[KB-sendReport] rid=0 pid=12339 [85,8,0,116,56,56,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,8,0,93,56,56,4,0,26,16,0,22,16,0,29,16,8,0,16,0,77,16,0,84,240,71,0,16,0,32,16,0,8,16,0,7,16,0,27,16,0,88,16,0,75,16,0,85,240,69,0,16,0,33,16,0,21,16,0,9,16,0,6,0]
+[KB-sendReport] rid=0 pid=12339 [85,8,0,172,56,112,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,8,0,67,56,112,4,0,0,0,16,0,78,16,0,73,48,207,0,16,0,34,16,0,23,16,0,10,16,0,25,128,66,0,16,0,50,16,0,72,240,83,0,16,0,35,16,0,28,16,0,11,16,0,5,16,0,44,16,0,95,16,0,92]
+[KB-sendReport] rid=0 pid=12339 [85,8,0,228,56,168,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,8,0,215,56,168,4,0,48,182,0,16,0,36,16,0,24,16,0,13,16,0,17,0,0,0,16,0,96,16,0,93,48,205,0,16,0,37,16,0,12,16,0,14,16,0,16,0,0,0,16,0,97,16,0,94,48,181,0,16,0,38,16,0]
+[KB-sendReport] rid=0 pid=12339 [85,8,0,28,56,224,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,8,0,205,56,224,4,0,18,16,0,15,16,0,54,16,128,0,16,0,86,16,0,87,48,226,0,16,0,39,16,0,19,16,0,51,16,0,55,240,255,3,16,0,82,16,0,81,48,234,0,16,0,45,16,0,47,16,0,52,16,0,56,16]
+[KB-sendReport] rid=0 pid=12339 [85,8,0,85,56,24,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,8,0,155,56,24,5,0,0,101,16,0,89,16,0,79,48,233,0,16,0,46,16,0,48,16,0,104,16,0,135,16,16,0,16,0,90,16,0,98,16,0,70,16,0,42,16,0,49,16,0,40,16,32,0,16,0,80,16,0,91,16,0,99]
+[KB-sendReport] rid=0 pid=12339 [85,8,0,133,48,80,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,8,0,243,48,80,5,0,0,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,0,0,0,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,8,0,62,56,0,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,8,0,187,56,0,6,0,240,8,0,240,31,0,16,0,43,16,0,57,16,2,0,16,1,0,240,47,0,16,0,71,16,0,58,240,31,1,16,0,20,240,4,0,16,0,100,16,4,0,240,160,0,16,0,83,16,0,59,240,31,2,16,0]
+[KB-sendReport] rid=0 pid=12339 [85,8,0,118,56,56,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,8,0,128,56,56,6,0,26,240,5,0,16,0,29,16,8,0,240,176,0,16,0,84,16,0,60,240,31,3,16,0,8,16,0,7,16,0,27,16,0,88,16,0,75,16,0,85,16,0,61,16,0,33,16,0,21,16,0,9,16,0,6,0]
+[KB-sendReport] rid=0 pid=12339 [85,8,0,174,56,112,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,8,0,33,56,112,6,0,0,0,16,0,78,16,0,73,16,0,62,16,0,34,16,0,23,16,0,10,16,0,25,128,66,0,16,0,50,16,0,72,16,0,63,16,0,35,16,0,28,16,0,11,240,11,0,16,0,44,16,0,95,240,23,0]
+[KB-sendReport] rid=0 pid=12339 [85,8,0,230,56,168,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,8,0,51,56,168,6,0,16,0,64,16,0,36,16,0,24,16,0,13,16,0,17,0,0,0,240,21,0,16,0,93,16,0,65,16,0,37,16,0,12,16,0,14,16,0,16,0,0,0,16,0,97,240,24,0,16,0,66,16,0,38,16,0]
+[KB-sendReport] rid=0 pid=12339 [85,8,0,30,56,224,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,8,0,250,56,224,6,0,18,16,0,15,16,0,54,16,128,0,16,0,86,16,0,87,16,0,67,16,0,39,16,0,19,240,103,0,16,0,55,240,255,3,240,50,0,240,51,0,16,0,68,240,60,0,240,102,0,240,104,0,16,0,56,16]
+[KB-sendReport] rid=0 pid=12339 [85,8,0,87,56,24,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,8,0,242,56,24,7,0,0,101,16,0,89,240,54,0,16,0,69,240,26,0,240,101,0,16,0,104,16,0,135,16,16,0,240,22,0,16,0,98,16,0,70,16,0,42,240,106,0,16,0,40,240,53,0,240,55,0,16,0,91,16,0,99]
+[KB-sendReport] rid=0 pid=12339 [85,8,0,135,48,80,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,8,0,36,48,80,7,0,0,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,0,0,0,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,241,0,81,56,24,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,241,0,81,56,24,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,241,0,18,56,216,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,241,0,130,56,216,2,0,60,108,105,103,104,116,64,118,50,62,1,1,1,4,255,0,0,65,100,3,255,0,0,65,100,0,255,0,0,65,100,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,241,0,75,56,16,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,241,0,75,56,16,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,241,0,131,56,72,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,241,0,131,56,72,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,160,0,56,56,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,160,0,0,56,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,160,0,112,56,56,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,160,0,56,56,56,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,160,0,168,56,112,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,160,0,112,56,112,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,160,0,224,56,168,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,160,0,168,56,168,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,160,0,24,56,224,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,160,0,224,56,224,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,160,0,81,56,24,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,160,0,25,56,24,1,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,160,0,137,56,80,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,160,0,81,56,80,1,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,160,0,193,56,136,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,160,0,137,56,136,1,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,160,0,249,56,192,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,160,0,193,56,192,1,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,160,0,49,56,248,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,160,0,249,56,248,1,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,160,0,106,56,48,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,160,0,50,56,48,2,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,160,0,162,56,104,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,160,0,106,56,104,2,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,160,0,218,56,160,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,160,0,162,56,160,2,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,160,0,18,56,216,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,160,0,218,56,216,2,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,160,0,75,56,16,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,160,0,19,56,16,3,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,160,0,131,56,72,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,160,0,75,56,72,3,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,160,0,187,56,128,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,160,0,131,56,128,3,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,160,0,243,56,184,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,160,0,187,56,184,3,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,160,0,3,16,240,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,160,0,243,16,240,3,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,5,0,56,56,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,5,0,49,56,0,0,0,80,0,170,187,1,1,0,1,4,100,0,0,1,0,255,0,0,0,0,0,255,0,0,0,3,100,0,1,1,255,0,0,198,0,2,6,0,1,1,0,255,255,255,0,0,100,0,1,1,255,0,0,16,16,16,16]
+[KB-sendReport] rid=0 pid=12339 [85,5,0,64,8,56,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,5,0,192,8,56,0,0,16,16,16,16,16,16,16,16,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+useSideStillEffectUpgrader confirmed.
+useSide2StillEffectUpgrader confirmed.
+ProfileListProviderFreezer will freeze useChannelValue、useMetaValue、useRuntimeConfigValue、useProfileList before profileList complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileListProviderFreezer will freeze useChannelValue、useMetaValue、useRuntimeConfigValue、useProfileList before profileList complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileListProviderFreezer will freeze useChannelValue、useMetaValue、useRuntimeConfigValue、useProfileList before profileList complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+No target found. Make sure the element you're trying to animate is accessible before creating your animation.
+[ProviderFreezer active]@15: 442.27587890625 ms
+[ProviderFreezer active]@17: 115.787109375 ms
+useStillEffectUpgrader confirmed.
+[ProviderFreezer active]@21: 140.845947265625 ms
+[ProviderFreezer active]@22: 177.8359375 ms
+useGifEffectUpgrader confirmed.
+metaContextValue: Object
+[KB-IN] rid=0 pid=12339 [170,241,0,68,56,104,2,0,91,49,55,56,55,51,54,53,57,52,50,52,57,50,44,49,55,56,55,51,54,53,57,52,50,53,48,51,44,34,53,111,109,108,103,115,118,103,95,109,116,107,99,111,117,109,99,34,93,255,255,255,255,255,255,255]
+[KB-IN] rid=0 pid=12339 [170,242,0,13,56,104,2,0,91,49,55,56,55,51,54,53,57,52,50,52,57,50,44,49,55,56,55,51,54,53,57,52,50,53,48,51,44,34,53,111,109,108,103,115,118,103,95,109,116,107,99,112,48,104,117,34,93,255,255,255,255,255,255,255]
+activeProfileData Object
+activeDeviceContext Object
+[KB-patch-ready]
+CZ initialized: Object
+support OffscreenCanvas
+[innerLoadCZSharedData:0] will call plugins.onSuccess
+[innerLoadCZSharedData:0] got promise result
+CZRemoteConfigList modify HidIndexDeviceFilters Array(232)
+CZRemoteConfigList modify KEYBOARD_MODELS Object
+CZRemoteConfigList modify deviceImageMap Object
+CZRemoteConfigList modify deviceList Object
+CZRemoteConfigList modify czDeviceName Array(20)
+[KB-patch-ready]
+当前版本号: 41b9e2ae
+当前版本时间: 2026-08-27 18:33
+[KB-open] pid=12339
+[KB-sendReport] rid=0 pid=12339 [85,3,0,56,56,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,3,0,56,38,0,0,0,40,1,48,1,255,255,44,74,97,110,32,49,50,32,50,48,50,54,44,50,48,58,52,49,58,52,55,50,46,52,71,32,68,111,110,103,108,101,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,169,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,169,0,118,1,0,0,0,117,110,107,110,119,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,4,0,56,56,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,4,0,6,56,0,0,0,0,3,0,1,2,3,170,187,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162]
+[KB-sendReport] rid=0 pid=12339 [85,241,0,162,56,104,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,241,0,68,56,104,2,0,91,49,55,56,55,51,54,53,57,52,50,52,57,50,44,49,55,56,55,51,54,53,57,52,50,53,48,51,44,34,53,111,109,108,103,115,118,103,95,109,116,107,99,111,117,109,99,34,93,255,255,255,255,255,255,255]
+[KB-sendReport] rid=0 pid=12339 [85,241,0,166,56,104,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,241,0,210,56,104,6,0,91,49,55,56,55,51,54,53,57,52,50,52,57,50,44,49,55,56,55,51,54,53,57,52,50,53,48,51,44,34,95,48,34,93,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255]
+[KB-sendReport] rid=0 pid=12339 [85,241,0,170,56,104,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,241,0,214,56,104,10,0,91,49,55,56,55,51,54,53,57,52,50,52,57,50,44,49,55,56,55,51,54,53,57,52,50,53,48,51,44,34,95,48,34,93,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255]
+[KB-sendReport] rid=0 pid=12339 [85,241,0,174,56,104,14,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,241,0,218,56,104,14,0,91,49,55,56,55,51,54,53,57,52,50,52,57,50,44,49,55,56,55,51,54,53,57,52,50,53,48,51,44,34,95,48,34,93,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255]
+[KB-sendReport] rid=0 pid=12339 [85,3,0,56,56,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,3,0,56,38,0,0,0,40,1,48,1,255,255,44,74,97,110,32,49,50,32,50,48,50,54,44,50,48,58,52,49,58,52,55,50,46,52,71,32,68,111,110,103,108,101,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,4,0,56,56,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,4,0,6,56,0,0,0,0,3,0,1,2,3,170,187,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162,162]
+[KB-sendReport] rid=0 pid=12339 [85,241,0,137,56,80,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,241,0,37,56,80,1,0,91,34,105,49,56,110,60,100,101,102,97,117,108,116,79,110,98,111,97,114,100,62,34,44,34,105,49,56,110,60,100,101,102,97,117,108,116,79,110,98,111,97,114,100,62,50,34,44,34,105,49,56,110,60,100,101]
+[KB-sendReport] rid=0 pid=12339 [85,241,0,193,56,136,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,241,0,221,56,136,1,0,102,97,117,108,116,79,110,98,111,97,114,100,62,51,34,44,34,34,93,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255]
+[KB-sendReport] rid=0 pid=12339 [85,241,0,249,56,192,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,241,0,249,56,192,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,241,0,49,56,248,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,241,0,49,56,248,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,241,0,106,56,48,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,241,0,106,56,48,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+ProfileListProviderFreezer will freeze useChannelValue、useMetaValue、useRuntimeConfigValue、useProfileList before profileList complete loading.
+[KB-sendReport] rid=0 pid=12339 [85,8,0,56,56,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,8,0,147,56,0,0,0,16,0,41,16,0,53,16,0,43,16,0,57,16,2,0,16,1,0,16,0,76,16,0,71,16,0,58,16,0,30,16,0,20,16,0,4,16,0,100,16,8,0,16,0,74,16,0,83,16,0,59,16,0,31,16,0]
+[KB-sendReport] rid=0 pid=12339 [85,8,0,112,56,56,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,8,0,130,56,56,0,0,26,16,0,22,16,0,29,16,4,0,16,0,77,16,0,84,16,0,60,16,0,32,16,0,8,16,0,7,16,0,27,16,0,88,16,0,75,16,0,85,16,0,61,16,0,33,16,0,21,16,0,9,16,0,6,0]
+[KB-sendReport] rid=0 pid=12339 [85,8,0,168,56,112,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,8,0,154,56,112,0,0,0,0,16,0,78,16,0,73,16,0,62,16,0,34,16,0,23,16,0,10,16,0,25,128,66,0,16,0,50,16,0,72,16,0,63,16,0,35,16,0,28,16,0,11,16,0,5,16,0,44,16,0,95,16,0,92]
+[KB-sendReport] rid=0 pid=12339 [85,8,0,224,56,168,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,8,0,254,56,168,0,0,16,0,64,16,0,36,16,0,24,16,0,13,16,0,17,0,0,0,16,0,96,16,0,93,16,0,65,16,0,37,16,0,12,16,0,14,16,0,16,0,0,0,16,0,97,16,0,94,16,0,66,16,0,38,16,0]
+[KB-sendReport] rid=0 pid=12339 [85,8,0,24,56,224,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,8,0,2,56,224,0,0,18,16,0,15,16,0,54,16,64,0,16,0,86,16,0,87,16,0,67,16,0,39,16,0,19,16,0,51,16,0,55,240,255,1,16,0,82,16,0,81,16,0,68,16,0,45,16,0,47,16,0,52,16,0,56,16]
+[KB-sendReport] rid=0 pid=12339 [85,8,0,81,56,24,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,8,0,211,56,24,1,0,0,101,16,0,89,16,0,79,16,0,69,16,0,46,16,0,48,16,0,104,16,0,135,16,16,0,16,0,90,16,0,98,16,0,70,16,0,42,16,0,49,16,0,40,16,32,0,16,0,80,16,0,91,16,0,99]
+[KB-sendReport] rid=0 pid=12339 [85,8,0,129,48,80,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,8,0,145,48,80,1,0,0,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,240,0,0,0,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,8,0,58,56,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,8,0,63,56,0,2,0,240,8,0,240,31,0,16,0,43,16,0,57,16,2,0,16,1,0,240,47,0,16,0,71,48,112,0,240,31,1,16,0,20,240,4,0,16,0,100,240,2,0,240,160,0,16,0,83,48,111,0,240,31,2,16,0]
+[KB-sendReport] rid=0 pid=12339 [85,8,0,114,56,56,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,8,0,76,56,56,2,0,26,240,5,0,16,0,29,16,4,0,240,176,0,16,0,84,240,71,0,240,31,3,16,0,8,16,0,7,16,0,27,16,0,88,16,0,75,16,0,85,240,70,0,16,0,33,16,0,21,16,0,9,16,0,6,0]
+[KB-sendReport] rid=0 pid=12339 [85,8,0,170,56,112,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,8,0,29,56,112,2,0,0,0,16,0,78,16,0,73,16,0,62,16,0,34,16,0,23,16,0,10,16,0,25,128,66,0,16,0,50,16,0,72,16,0,63,16,0,35,16,0,28,16,0,11,240,11,0,16,0,44,16,0,95,240,23,0]
+[KB-sendReport] rid=0 pid=12339 [85,8,0,226,56,168,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,8,0,4,56,168,2,0,48,182,0,16,0,36,16,0,24,16,0,13,16,0,17,0,0,0,240,21,0,16,0,93,48,205,0,16,0,37,16,0,12,16,0,14,16,0,16,0,0,0,16,0,97,240,24,0,48,181,0,16,0,38,16,0]
+[KB-sendReport] rid=0 pid=12339 [85,8,0,26,56,224,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,8,0,57,56,224,2,0,18,16,0,15,16,0,54,16,64,0,16,0,86,16,0,87,48,226,0,16,0,39,16,0,19,240,103,0,16,0,55,240,255,1,240,50,0,240,51,0,48,234,0,240,60,0,240,102,0,240,104,0,16,0,56,16]
+[KB-sendReport] rid=0 pid=12339 [85,8,0,83,56,24,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,8,0,178,56,24,3,0,0,101,16,0,89,240,54,0,48,233,0,240,26,0,240,101,0,16,0,104,16,0,135,16,16,0,240,22,0,16,0,98,16,0,70,16,0,42,240,106,0,16,0,40,240,53,0,240,55,0,16,0,91,16,0,99]
+[KB-sendReport] rid=0 pid=12339 [85,8,0,131,48,80,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,8,0,194,48,80,3,0,0,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,241,0,0,0,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,8,0,60,56,0,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,8,0,61,56,0,4,0,16,0,41,16,0,53,16,0,43,16,0,57,16,2,0,16,1,0,16,0,76,16,0,71,48,112,0,16,0,30,16,0,20,16,0,4,16,0,100,16,4,0,16,0,74,16,0,83,48,111,0,16,0,31,16,0]
+[KB-sendReport] rid=0 pid=12339 [85,8,0,116,56,56,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,8,0,93,56,56,4,0,26,16,0,22,16,0,29,16,8,0,16,0,77,16,0,84,240,71,0,16,0,32,16,0,8,16,0,7,16,0,27,16,0,88,16,0,75,16,0,85,240,69,0,16,0,33,16,0,21,16,0,9,16,0,6,0]
+[KB-sendReport] rid=0 pid=12339 [85,8,0,172,56,112,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,8,0,67,56,112,4,0,0,0,16,0,78,16,0,73,48,207,0,16,0,34,16,0,23,16,0,10,16,0,25,128,66,0,16,0,50,16,0,72,240,83,0,16,0,35,16,0,28,16,0,11,16,0,5,16,0,44,16,0,95,16,0,92]
+[KB-sendReport] rid=0 pid=12339 [85,8,0,228,56,168,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,8,0,215,56,168,4,0,48,182,0,16,0,36,16,0,24,16,0,13,16,0,17,0,0,0,16,0,96,16,0,93,48,205,0,16,0,37,16,0,12,16,0,14,16,0,16,0,0,0,16,0,97,16,0,94,48,181,0,16,0,38,16,0]
+[KB-sendReport] rid=0 pid=12339 [85,8,0,28,56,224,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,8,0,205,56,224,4,0,18,16,0,15,16,0,54,16,128,0,16,0,86,16,0,87,48,226,0,16,0,39,16,0,19,16,0,51,16,0,55,240,255,3,16,0,82,16,0,81,48,234,0,16,0,45,16,0,47,16,0,52,16,0,56,16]
+[KB-sendReport] rid=0 pid=12339 [85,8,0,85,56,24,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,8,0,155,56,24,5,0,0,101,16,0,89,16,0,79,48,233,0,16,0,46,16,0,48,16,0,104,16,0,135,16,16,0,16,0,90,16,0,98,16,0,70,16,0,42,16,0,49,16,0,40,16,32,0,16,0,80,16,0,91,16,0,99]
+[KB-sendReport] rid=0 pid=12339 [85,8,0,133,48,80,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,8,0,243,48,80,5,0,0,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,242,0,0,0,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,8,0,62,56,0,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,8,0,187,56,0,6,0,240,8,0,240,31,0,16,0,43,16,0,57,16,2,0,16,1,0,240,47,0,16,0,71,16,0,58,240,31,1,16,0,20,240,4,0,16,0,100,16,4,0,240,160,0,16,0,83,16,0,59,240,31,2,16,0]
+[KB-sendReport] rid=0 pid=12339 [85,8,0,118,56,56,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,8,0,128,56,56,6,0,26,240,5,0,16,0,29,16,8,0,240,176,0,16,0,84,16,0,60,240,31,3,16,0,8,16,0,7,16,0,27,16,0,88,16,0,75,16,0,85,16,0,61,16,0,33,16,0,21,16,0,9,16,0,6,0]
+[KB-sendReport] rid=0 pid=12339 [85,8,0,174,56,112,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,8,0,33,56,112,6,0,0,0,16,0,78,16,0,73,16,0,62,16,0,34,16,0,23,16,0,10,16,0,25,128,66,0,16,0,50,16,0,72,16,0,63,16,0,35,16,0,28,16,0,11,240,11,0,16,0,44,16,0,95,240,23,0]
+[KB-sendReport] rid=0 pid=12339 [85,8,0,230,56,168,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,8,0,51,56,168,6,0,16,0,64,16,0,36,16,0,24,16,0,13,16,0,17,0,0,0,240,21,0,16,0,93,16,0,65,16,0,37,16,0,12,16,0,14,16,0,16,0,0,0,16,0,97,240,24,0,16,0,66,16,0,38,16,0]
+[KB-sendReport] rid=0 pid=12339 [85,8,0,30,56,224,6,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,8,0,250,56,224,6,0,18,16,0,15,16,0,54,16,128,0,16,0,86,16,0,87,16,0,67,16,0,39,16,0,19,240,103,0,16,0,55,240,255,3,240,50,0,240,51,0,16,0,68,240,60,0,240,102,0,240,104,0,16,0,56,16]
+[KB-sendReport] rid=0 pid=12339 [85,8,0,87,56,24,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,8,0,242,56,24,7,0,0,101,16,0,89,240,54,0,16,0,69,240,26,0,240,101,0,16,0,104,16,0,135,16,16,0,240,22,0,16,0,98,16,0,70,16,0,42,240,106,0,16,0,40,240,53,0,240,55,0,16,0,91,16,0,99]
+[KB-sendReport] rid=0 pid=12339 [85,8,0,135,48,80,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,8,0,36,48,80,7,0,0,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,243,0,0,0,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,241,0,81,56,24,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,241,0,81,56,24,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,241,0,18,56,216,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,241,0,130,56,216,2,0,60,108,105,103,104,116,64,118,50,62,1,1,1,4,255,0,0,65,100,3,255,0,0,65,100,0,255,0,0,65,100,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,241,0,75,56,16,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,241,0,75,56,16,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,241,0,131,56,72,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,241,0,131,56,72,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,160,0,56,56,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,160,0,0,56,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,160,0,112,56,56,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,160,0,56,56,56,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,160,0,168,56,112,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,160,0,112,56,112,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,160,0,224,56,168,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,160,0,168,56,168,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,160,0,24,56,224,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,160,0,224,56,224,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,160,0,81,56,24,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,160,0,25,56,24,1,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,160,0,137,56,80,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,160,0,81,56,80,1,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,160,0,193,56,136,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,160,0,137,56,136,1,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,160,0,249,56,192,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,160,0,193,56,192,1,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,160,0,49,56,248,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,160,0,249,56,248,1,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,160,0,106,56,48,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,160,0,50,56,48,2,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,160,0,162,56,104,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,160,0,106,56,104,2,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,160,0,218,56,160,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,160,0,162,56,160,2,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,160,0,18,56,216,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,160,0,218,56,216,2,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,160,0,75,56,16,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,160,0,19,56,16,3,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,160,0,131,56,72,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,160,0,75,56,72,3,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,160,0,187,56,128,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,160,0,131,56,128,3,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,160,0,243,56,184,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,160,0,187,56,184,3,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,160,0,3,16,240,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,160,0,243,16,240,3,0,169,0,79,0,0,0,0,0,169,0,79,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-sendReport] rid=0 pid=12339 [85,5,0,56,56,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,5,0,49,56,0,0,0,80,0,170,187,1,1,0,1,4,100,0,0,1,0,255,0,0,0,0,0,255,0,0,0,3,100,0,1,1,255,0,0,198,0,2,6,0,1,1,0,255,255,255,0,0,100,0,1,1,255,0,0,16,16,16,16]
+[KB-sendReport] rid=0 pid=12339 [85,5,0,64,8,56,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,5,0,192,8,56,0,0,16,16,16,16,16,16,16,16,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+useSideStillEffectUpgrader confirmed.
+useSide2StillEffectUpgrader confirmed.
+ProfileListProviderFreezer will freeze useChannelValue、useMetaValue、useRuntimeConfigValue、useProfileList before profileList complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileListProviderFreezer will freeze useChannelValue、useMetaValue、useRuntimeConfigValue、useProfileList before profileList complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileListProviderFreezer will freeze useChannelValue、useMetaValue、useRuntimeConfigValue、useProfileList before profileList complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+No target found. Make sure the element you're trying to animate is accessible before creating your animation.
+[ProviderFreezer active]@15: 442.27587890625 ms
+[ProviderFreezer active]@17: 115.787109375 ms
+useStillEffectUpgrader confirmed.
+[ProviderFreezer active]@21: 140.845947265625 ms
+[ProviderFreezer active]@22: 177.8359375 ms
+useGifEffectUpgrader confirmed.
+metaContextValue: Object
+[KB-IN] rid=0 pid=12339 [170,241,0,68,56,104,2,0,91,49,55,56,55,51,54,53,57,52,50,52,57,50,44,49,55,56,55,51,54,53,57,52,50,53,48,51,44,34,53,111,109,108,103,115,118,103,95,109,116,107,99,111,117,109,99,34,93,255,255,255,255,255,255,255]
+[KB-IN] rid=0 pid=12339 [170,242,0,13,56,104,2,0,91,49,55,56,55,51,54,53,57,52,50,52,57,50,44,49,55,56,55,51,54,53,57,52,50,53,48,51,44,34,53,111,109,108,103,115,118,103,95,109,116,107,99,112,48,104,117,34,93,255,255,255,255,255,255,255]
+activeProfileData Object
+activeDeviceContext Object
+[KB-IN] rid=0 pid=12339 [170,241,0,13,56,104,2,0,91,49,55,56,55,51,54,53,57,52,50,52,57,50,44,49,55,56,55,51,54,53,57,52,50,53,48,51,44,34,53,111,109,108,103,115,118,103,95,109,116,107,99,112,48,104,117,34,93,255,255,255,255,255,255,255]
+[KB-IN] rid=0 pid=12339 [170,242,0,161,56,104,2,0,91,49,55,56,55,51,54,53,57,52,50,52,57,50,44,49,55,56,55,51,54,53,57,52,50,53,48,51,44,34,53,111,109,108,103,115,118,103,95,109,116,107,99,114,50,56,53,34,93,255,255,255,255,255,255,255]
+[KB-patch-installed]
+当前版本号: 41b9e2ae
+当前版本时间: 2026-08-27 18:33
+ProfileListProviderFreezer will freeze useChannelValue、useMetaValue、useRuntimeConfigValue、useProfileList before profileList complete loading.
+useSideStillEffectUpgrader confirmed.
+useSide2StillEffectUpgrader confirmed.
+ProfileListProviderFreezer will freeze useChannelValue、useMetaValue、useRuntimeConfigValue、useProfileList before profileList complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileListProviderFreezer will freeze useChannelValue、useMetaValue、useRuntimeConfigValue、useProfileList before profileList complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileListProviderFreezer will freeze useChannelValue、useMetaValue、useRuntimeConfigValue、useProfileList before profileList complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+No target found. Make sure the element you're trying to animate is accessible before creating your animation.
+[ProviderFreezer active]@15: 446.343994140625 ms
+[ProviderFreezer active]@17: 121.39404296875 ms
+useStillEffectUpgrader confirmed.
+[ProviderFreezer active]@21: 146.06494140625 ms
+[ProviderFreezer active]@22: 173.218017578125 ms
+useGifEffectUpgrader confirmed.
+metaContextValue: Object
+activeProfileData Object
+activeDeviceContext Object
+[KB-patch-ready]
+CZ initialized: Object
+support OffscreenCanvas
+[innerLoadCZSharedData:0] will call plugins.onSuccess
+[innerLoadCZSharedData:0] got promise result
+CZRemoteConfigList modify HidIndexDeviceFilters Array(232)
+CZRemoteConfigList modify KEYBOARD_MODELS Object
+CZRemoteConfigList modify deviceImageMap Object
+CZRemoteConfigList modify deviceList Object
+CZRemoteConfigList modify czDeviceName Array(20)
+[KB-patch-ready]
+当前版本号: 41b9e2ae
+当前版本时间: 2026-08-27 18:33
+[KB-open] pid=12339
+[KB-sendReport] rid=0 pid=12339 [85,3,0,56,56,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+[KB-IN] rid=0 pid=12339 [170,3,0,56,38,0,0,0,40,1,48,1,255,255,44,74,97,110,32,49,50,32,50,48,50,54,44,50,48,58,52,49,58,52,55,50,46,52,71,32,68,111,110,103,108,101,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+CZ initialized: Object
+support OffscreenCanvas
+[innerLoadCZSharedData:0] will call plugins.onSuccess
+[innerLoadCZSharedData:0] got promise result
+CZRemoteConfigList modify HidIndexDeviceFilters Array(232)
+CZRemoteConfigList modify KEYBOARD_MODELS Object
+CZRemoteConfigList modify deviceImageMap Object
+CZRemoteConfigList modify deviceList Object
+CZRemoteConfigList modify czDeviceName Array(20)
+当前版本号: 41b9e2ae
+当前版本时间: 2026-08-27 18:33
+ProfileListProviderFreezer will freeze useChannelValue、useMetaValue、useRuntimeConfigValue、useProfileList before profileList complete loading.
+useSideStillEffectUpgrader confirmed.
+useSide2StillEffectUpgrader confirmed.
+ProfileListProviderFreezer will freeze useChannelValue、useMetaValue、useRuntimeConfigValue、useProfileList before profileList complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileListProviderFreezer will freeze useChannelValue、useMetaValue、useRuntimeConfigValue、useProfileList before profileList complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileListProviderFreezer will freeze useChannelValue、useMetaValue、useRuntimeConfigValue、useProfileList before profileList complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+No target found. Make sure the element you're trying to animate is accessible before creating your animation.
+[ProviderFreezer active]@15: 443.9150390625 ms
+[ProviderFreezer active]@17: 106.533203125 ms
+useStillEffectUpgrader confirmed.
+[ProviderFreezer active]@21: 131.805908203125 ms
+[ProviderFreezer active]@22: 157.218994140625 ms
+useGifEffectUpgrader confirmed.
+metaContextValue: Object
+activeProfileData Object
+activeDeviceContext Object
+[KB-patch-installed]
+CZ initialized: Object
+support OffscreenCanvas
+[innerLoadCZSharedData:0] will call plugins.onSuccess
+[innerLoadCZSharedData:0] got promise result
+CZRemoteConfigList modify HidIndexDeviceFilters Array(232)
+CZRemoteConfigList modify KEYBOARD_MODELS Object
+CZRemoteConfigList modify deviceImageMap Object
+CZRemoteConfigList modify deviceList Object
+CZRemoteConfigList modify czDeviceName Array(20)
+[KB-patch-installed]
+当前版本号: 41b9e2ae
+当前版本时间: 2026-08-27 18:33
+ProfileListProviderFreezer will freeze useChannelValue、useMetaValue、useRuntimeConfigValue、useProfileList before profileList complete loading.
+useSideStillEffectUpgrader confirmed.
+useSide2StillEffectUpgrader confirmed.
+ProfileListProviderFreezer will freeze useChannelValue、useMetaValue、useRuntimeConfigValue、useProfileList before profileList complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileListProviderFreezer will freeze useChannelValue、useMetaValue、useRuntimeConfigValue、useProfileList before profileList complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+ProfileListProviderFreezer will freeze useChannelValue、useMetaValue、useRuntimeConfigValue、useProfileList before profileList complete loading.
+ProfileDataFreezer will freeze useProfileData before profileData complete loading.
+No target found. Make sure the element you're trying to animate is accessible before creating your animation.
+[ProviderFreezer active]@15: 334.64208984375 ms
+[ProviderFreezer active]@17: 91.7890625 ms
+useStillEffectUpgrader confirmed.
+[ProviderFreezer active]@21: 119.698974609375 ms
+[ProviderFreezer active]@22: 134.658935546875 ms
+useGifEffectUpgrader confirmed.
+metaContextValue: Object
+activeProfileData Object
+activeDeviceContext Object
+activeDeviceContext Object
+activeDeviceContext Object
+activeDeviceContext Object
+activeDeviceContext Object
