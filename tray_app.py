@@ -8,6 +8,8 @@
     python tray_app.py --selftest # 只读一次电量打印后退出
     python tray_app.py --smoke    # 启动托盘 5 秒后自动退出(冒烟测试)
 """
+__version__ = "2.0"
+
 import sys
 import threading
 import time
