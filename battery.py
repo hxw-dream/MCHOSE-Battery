@@ -118,19 +118,23 @@ class KeyboardListener(threading.Thread):
     # ---- 解析 ----
     def _feed(self, raw):
         if raw[0] == 0xFA and raw[1] == 0xFB:
-            if raw[2] == 0x07:  # 电量广播
-                self.percent = raw[3]
-                self.charging = raw[4] != 0
-                self.ts = time.time()
-                self._save_cache()
+            if raw[2] == 0x07 and len(raw) > 4:  # 电量广播(充电事件时)
+                percent = raw[3]
+                if 0 <= percent <= 100:
+                    self.percent = percent
+                    self.charging = raw[4] != 0
+                    self.ts = time.time()
+                    self._save_cache()
             elif raw[2] == 0x06:  # 通信状态广播
                 self.connected = raw[3] == 0
-        elif raw[0] == 0xAA and raw[3] == 0x00 and raw[4] == 0x07 and len(raw) >= 11:
-            # MANUAL_REPORT: data[2]=充电 data[3]=电量 (data 自 raw[7] 起)
-            percent = raw[10]
+        elif raw[0] == 0xAA and raw[1] == 0x07 and raw[2] == 0x00 and len(raw) > 11:
+            # MANUAL_REPORT 推送 (Z 帧广播, 命令 0x0700):
+            # [AA 07 00 len size offLo offHi 00 | data[0..22]]
+            # data[0..1]=变更掩码 data[2]=充电(0/1/2) data[3]=电量% data[4]=连接(1有线/2无线)
+            charge, percent = raw[10], raw[11]
             if 0 <= percent <= 100:
                 self.percent = percent
-                self.charging = raw[9] not in (0,)
+                self.charging = charge == 1
                 self.ts = time.time()
                 self._save_cache()
 
@@ -155,13 +159,26 @@ class KeyboardListener(threading.Thread):
                 t0 = time.monotonic()
                 while time.monotonic() - t0 < 1.0:
                     dev.read(64, timeout_ms=0)
+                t0 = time.monotonic()
+                idle = 0.0
                 while not self._stop:
                     try:
                         data = dev.read(64, timeout_ms=250)
                     except OSError:
                         break
                     if data:
+                        idle = 0.0
                         self._feed(bytes(data))
+                    else:
+                        idle += 0.25
+                        if idle >= 600:  # 每 10 分钟重发握手, 刺激固件回报状态(若有)
+                            idle = 0.0
+                            try:
+                                for f in warmups:
+                                    dev.write(bytes([0x00]) + f + b"\x00" * 55)
+                                    time.sleep(0.05)
+                            except OSError:
+                                break
             except OSError:
                 time.sleep(3)
             finally:
