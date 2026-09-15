@@ -107,12 +107,6 @@ class App:
             extra = "（等待电量推送）" if name == "键盘" else ""
             return f"{name} --{extra}"
         extra = " ⚡充电中" if st.get("charging") else ""
-        age = st.get("age")
-        if age is not None and age > 90:
-            if age < 3600:
-                extra += f"（{age/60:.0f} 分钟前推送）"
-            else:
-                extra += f"（{age/3600:.1f} 小时前推送）"
         return f"{name} {st['percent']}% ({st.get('connect', '?')}){extra}"
 
     def _update_ui(self):
