@@ -38,7 +38,7 @@ def _font(kind, scale):
     if key not in _FONT_CACHE:
         try:
             if kind == "num":
-                f = ImageFont.truetype(r"C:\Windows\Fonts\msyhbd.ttc", 22 * scale)
+                f = ImageFont.truetype(r"C:\Windows\Fonts\msyhbd.ttc", 17 * scale)
             elif kind == "label":
                 f = ImageFont.truetype(r"C:\Windows\Fonts\msyh.ttc", 14 * scale)
             else:
