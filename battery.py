@@ -202,7 +202,9 @@ class KeyboardListener(threading.Thread):
                     self.charging = raw[4] != 0
                     self.ts = time.time()
                     self._save_cache()
-            elif raw[2] == 0x06:  # 通信状态广播
+            elif raw[2] == 0x06:  # 通信状态广播: 键盘与接收器链路建立/断开 = 切模式信号
+                if self.connected is not None and self.connected != (raw[3] == 0):
+                    _ble_cache["ts"] = 0.0  # 立即作废蓝牙扫描缓存, 下轮轮询即可反映新模式
                 self.connected = raw[3] == 0
         elif raw[0] == 0xAA and raw[1] == 0x07 and raw[2] == 0x00 and len(raw) > 11:
             # MANUAL_REPORT 推送 (Z 帧广播, 命令 0x0700):
