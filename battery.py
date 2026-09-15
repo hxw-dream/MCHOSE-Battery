@@ -75,15 +75,18 @@ foreach ($dev in ($all | Where-Object { $_.InstanceId -like 'BTHLE\DEV_*' })) {
 }
 """
 
-_ble_cache = {"ts": 0.0, "data": {"mouse": None, "keyboard": None}}
+_ble_cache = {"ts": 0.0, "data": {"mouse": None, "keyboard": None,
+                                  "mouse_live": False, "keyboard_live": False}}
 
 
 def ble_batteries(max_age=60):
-    """蓝牙在线的 MCHOSE 设备电量: {'mouse': %|None, 'keyboard': %|None}。60 秒缓存。"""
+    """蓝牙 MCHOSE 设备电量。返回 dict:
+    mouse/keyboard = 百分比|None; *_live = True 表示 BLE 链路硬在线(实时可信),
+    False 表示闲置断链的 GATT 缓存(24 小时内连接过)。60 秒缓存。"""
     now = time.monotonic()
     if now - _ble_cache["ts"] < max_age:
         return _ble_cache["data"]
-    data = {"mouse": None, "keyboard": None}
+    data = {"mouse": None, "keyboard": None, "mouse_live": False, "keyboard_live": False}
     try:
         r = subprocess.run(["powershell", "-NoProfile", "-Command", _PS_BLE],
                            capture_output=True, text=True, timeout=40,
@@ -93,11 +96,11 @@ def ble_batteries(max_age=60):
             m = re.match(r"name=(.*)\|bat=(\d+)\|hid=(\d)(?:\|age=(\d+))?", line.strip())
             if not m:
                 continue
-            name, bat = m.group(1).lower(), int(m.group(2))
+            name, bat, live = m.group(1).lower(), int(m.group(2)), m.group(3) == "1"
             if "k7" in name:
-                data["mouse"] = bat
+                data["mouse"], data["mouse_live"] = bat, live
             elif "k99" in name:
-                data["keyboard"] = bat
+                data["keyboard"], data["keyboard_live"] = bat, live
     except (OSError, subprocess.TimeoutExpired):
         pass
     _ble_cache["ts"] = now
@@ -278,20 +281,27 @@ def start_keyboard_listener():
 
 
 def read_keyboard():
-    """键盘电量: 蓝牙在线优先(可实时查询), 否则取 2.4G 推送监听的最近值。"""
-    bt = ble_batteries().get("keyboard")
-    if bt is not None:
-        return {"percent": bt, "charging": False, "age": None,
+    """键盘电量: 蓝牙硬在线(实时查询) > 2.4G 推送监听 > 蓝牙闲置缓存。
+    蓝牙硬在线必须最优先且仅它优先——键盘切回 2.4G 后集合消失,
+    闲置缓存不得覆盖推送监听刚拿到的 2.4G 数据。"""
+    ble = ble_batteries()
+    if ble["keyboard"] is not None and ble["keyboard_live"]:
+        return {"percent": ble["keyboard"], "charging": False, "age": None,
                 "connect": "蓝牙", "source": "ble"}
     if _kb_listener is None:
         start_keyboard_listener()
-    return {
-        "percent": _kb_listener.percent,
-        "charging": bool(_kb_listener.charging),
-        "age": time.time() - _kb_listener.ts if _kb_listener.ts else None,
-        "connect": "2.4G",
-        "source": "push",
-    }
+    if _kb_listener.percent is not None:
+        return {
+            "percent": _kb_listener.percent,
+            "charging": bool(_kb_listener.charging),
+            "age": time.time() - _kb_listener.ts if _kb_listener.ts else None,
+            "connect": "2.4G",
+            "source": "push",
+        }
+    if ble["keyboard"] is not None:
+        return {"percent": ble["keyboard"], "charging": False, "age": None,
+                "connect": "蓝牙", "source": "ble"}
+    return None
 
 
 if __name__ == "__main__":
