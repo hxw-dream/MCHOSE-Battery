@@ -176,7 +176,10 @@ class Widget:
         self.label.bind("<Button-3>", self._popup_menu)
         self.menu = tk.Menu(self.tk, tearoff=0)
         self.menu.add_command(label="隐藏浮窗", command=self.hide)
+        if callable(self.flags.get("quit")):
+            self.menu.add_command(label="退出", command=self.flags["quit"])
 
+        TK_HOLDER["root"] = self.tk
         self._apply_visibility()
         self.tk.after(400, self._tick)
 
@@ -267,6 +270,106 @@ def run_widget(state_getter, flags):
         Widget(state_getter, flags).run()
     except Exception:
         pass  # 浮窗失败不影响托盘
+
+
+# ---- 托盘线程 -> tk 线程的调用桥 ----
+TK_HOLDER = {}
+
+
+def run_in_tk(cb):
+    root = TK_HOLDER.get("root")
+    if root is not None:
+        try:
+            root.after(0, cb)
+        except tk.TclError:
+            pass
+
+
+# ---- 自绘黑色菜单 ----
+MENU_BG = "#0a0a0a"
+MENU_BORDER = "#2d2d2d"
+MENU_HOVER = "#1d1f24"
+MENU_TEXT = "#e8eaed"
+MENU_DIM = "#8b909b"
+
+
+def show_menu(items, x, y):
+    """在 tk 线程显示黑色菜单。items: {"label","action","checked","header"} 或 None(分隔线)。"""
+    root = TK_HOLDER.get("root")
+    if root is None:
+        return
+
+    menu = tk.Toplevel(root)
+    menu.overrideredirect(True)
+    menu.attributes("-topmost", True)
+    menu.configure(bg=MENU_BORDER)
+    try:
+        menu.attributes("-transparentcolor", False)
+    except tk.TclError:
+        pass
+
+    body = tk.Frame(menu, bg=MENU_BG, padx=6, pady=6)
+    body.pack(fill="both", expand=True)
+
+    widgets = []
+
+    def close(*_):
+        try:
+            menu.grab_release()
+        except tk.TclError:
+            pass
+        menu.destroy()
+
+    def activate(action):
+        close()
+        if action:
+            try:
+                action()
+            except Exception:
+                pass
+
+    def add_row(parent, spec):
+        label = spec["label"]
+        if spec.get("checked"):
+            label = "✓  " + label
+        elif spec.get("radio"):
+            label = "·  " + label
+        row = tk.Label(parent, text=label, anchor="w", bg=MENU_BG, fg=MENU_TEXT,
+                       font=("Microsoft YaHei", 9), padx=14, pady=5)
+        row.pack(fill="x")
+        row.bind("<Enter>", lambda *_: row.configure(bg=MENU_HOVER))
+        row.bind("<Leave>", lambda *_: row.configure(bg=MENU_BG))
+        row.bind("<Button-1>", lambda *_: activate(spec.get("action")))
+        widgets.append(row)
+
+    for spec in items:
+        if spec is None:
+            tk.Frame(body, bg=MENU_BORDER, height=1).pack(fill="x", padx=8, pady=4)
+        elif spec.get("header"):
+            tk.Label(body, text=spec["label"], anchor="w", bg=MENU_BG, fg=MENU_DIM,
+                     font=("Microsoft YaHei", 8), padx=14, pady=2).pack(fill="x")
+        else:
+            add_row(body, spec)
+
+    menu.update_idletasks()
+    w, h = menu.winfo_reqwidth(), menu.winfo_reqheight()
+    sw, sh = menu.winfo_screenwidth(), menu.winfo_screenheight()
+    x = max(0, min(x, sw - w - 4))
+    y = max(0, min(y, sh - h - 4))
+    menu.geometry(f"+{x}+{y}")
+
+    menu.bind("<Escape>", close)
+    menu.bind("<FocusOut>", close)
+    menu.transient(root)
+    menu.lift()
+    try:
+        menu.grab_set_global()
+    except tk.TclError:
+        try:
+            menu.grab_set()
+        except tk.TclError:
+            pass
+    menu.focus_set()
 
 
 if __name__ == "__main__":

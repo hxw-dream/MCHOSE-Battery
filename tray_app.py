@@ -10,6 +10,7 @@
 """
 __version__ = "2.0"
 
+import ctypes
 import sys
 import threading
 import time
@@ -209,7 +210,19 @@ def set_autostart(enable):
         pass
 
 
+def _enable_dark_menus():
+    """声明本进程使用深色模式(uxtheme 内部接口), 托盘原生菜单随之变黑。
+    必须在显示菜单的线程(主线程)调用。AllowDark=1: 跟随系统深浅色设置。"""
+    try:
+        uxtheme = ctypes.WinDLL("uxtheme")
+        uxtheme[135](1)   # SetPreferredAppMode(AllowDark)
+        uxtheme[136]()    # FlushMenuThemes
+    except Exception:
+        pass
+
+
 def main():
+    _enable_dark_menus()
     battery.start_keyboard_listener()  # 键盘电量推送常驻监听
     app = App()
     if "--selftest" in sys.argv:
