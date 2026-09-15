@@ -19,6 +19,7 @@ import pystray
 from PIL import Image, ImageDraw, ImageFont
 
 import battery
+import float_window
 
 POLL_SECONDS = 5
 LOW_BATTERY = 20
@@ -68,10 +69,13 @@ class App:
         self.state = {"mouse": None, "keyboard": None, "ts": 0.0}
         self.low_notified = False
         self.notify_enabled = True
+        cfg = float_window._load_config()
+        self.widget_flags = {"visible": not cfg.get("hidden", False)}
         self.icon = pystray.Icon(
             "MCHOSE", icon=draw_icon(None), title="MCHOSE 电量读取中…",
             menu=pystray.Menu(
                 pystray.MenuItem("立即刷新", lambda *_: self.refresh(), default=True),
+                pystray.MenuItem("显示浮窗", self._toggle_widget, checked=lambda *_: self.widget_flags["visible"]),
                 pystray.MenuItem("低电量提醒", self._toggle_notify, checked=lambda *_: self.notify_enabled),
                 pystray.MenuItem("开机自启", self._toggle_autostart, checked=lambda *_: autostart_enabled()),
                 pystray.Menu.SEPARATOR,
@@ -81,6 +85,12 @@ class App:
     # ---- 菜单动作 ----
     def _toggle_notify(self, *_):
         self.notify_enabled = not self.notify_enabled
+
+    def _toggle_widget(self, *_):
+        self.widget_flags["visible"] = not self.widget_flags["visible"]
+        cfg = float_window._load_config()
+        cfg["hidden"] = not self.widget_flags["visible"]
+        float_window.save_config(cfg)
 
     def _toggle_autostart(self, *_):
         set_autostart(not autostart_enabled())
@@ -186,12 +196,17 @@ def main():
         print("鼠标:", m)
         print("键盘:", k)
         print("图标渲染:", "OK" if draw_icon(85) else "FAIL")
+        print("浮窗渲染:", "OK" if float_window.render_card(app.state) else "FAIL")
         return
     if "--smoke" in sys.argv:
         threading.Thread(target=lambda: (time.sleep(5), app._quit()), daemon=True).start()
+        threading.Thread(target=float_window.run_widget,
+                         args=(lambda: app.state, app.widget_flags), daemon=True).start()
         app.run()
         print("smoke ok")
         return
+    threading.Thread(target=float_window.run_widget,
+                     args=(lambda: app.state, app.widget_flags), daemon=True).start()
     app.run()
 
 
