@@ -133,7 +133,7 @@ def save_config(cfg):
 class Widget:
     def __init__(self, state_getter, flags):
         self.state_getter = state_getter
-        self.flags = flags  # {"visible": bool} 由托盘线程读写
+        self.flags = flags  # {"visible","size_factor","reset_pos"} 由托盘线程读写
         cfg = _load_config()
         self.cfg = cfg if isinstance(cfg, dict) else {}
         self.last_sig = None
@@ -152,12 +152,14 @@ class Widget:
             self.tk.attributes("-transparentcolor", f"#{KEY[0]:02x}{KEY[1]:02x}{KEY[2]:02x}")
         except tk.TclError:
             pass
-        # 系统缩放系数: 高分屏按比例放大, 字与图形同步变大
+        # 系统缩放系数 x 用户档位: 高分屏按比例放大, 字与图形同步变大
         try:
             dpi = self.tk.winfo_fpixels("1i")
         except tk.TclError:
             dpi = 96
-        self.scale = max(1, round(dpi / 96))
+        self.dpi_scale = max(1, round(dpi / 96))
+        self.size_factor = float(self.flags.get("size_factor", 1.0)) or 1.0
+        self.scale = max(1, round(self.dpi_scale * self.size_factor))
         w, h = CARD_W * self.scale, CARD_H * self.scale
         sw = self.tk.winfo_screenwidth()
         sh = self.tk.winfo_screenheight()
@@ -177,6 +179,10 @@ class Widget:
 
         self._apply_visibility()
         self.tk.after(400, self._tick)
+
+    def _default_pos(self):
+        w, h = CARD_W * self.scale, CARD_H * self.scale
+        return (self.tk.winfo_screenwidth() - w - 30, self.tk.winfo_screenheight() - h - 90)
 
     # ---- 托盘控制的可见性 ----
     def _apply_visibility(self):
@@ -220,6 +226,20 @@ class Widget:
 
     # ---- 数据轮询与重绘 ----
     def _tick(self):
+        # 托盘切档位: 尺寸即时变化, 内容强制重绘
+        new_factor = float(self.flags.get("size_factor", 1.0)) or 1.0
+        if new_factor != self.size_factor:
+            self.size_factor = new_factor
+            self.scale = max(1, round(self.dpi_scale * new_factor))
+            self.tk.geometry(f"{CARD_W * self.scale}x{CARD_H * self.scale}")
+            self.last_sig = None
+        # 托盘"恢复默认位置"
+        if self.flags.pop("reset_pos", False):
+            x, y = self._default_pos()
+            self.tk.geometry(f"+{x}+{y}")
+            self.cfg["x"], self.cfg["y"] = x, y
+            save_config(self.cfg)
+
         state = self.state_getter() or {}
         m, k = state.get("mouse"), state.get("keyboard")
         sig = tuple((s or {}).get(k2) for s, k2 in
