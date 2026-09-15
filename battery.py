@@ -41,19 +41,35 @@ _KB_CACHE_FILE = os.path.join(_CACHE_DIR, "keyboard.json")
 
 # ---------------- 蓝牙模式 ----------------
 # 设备切蓝牙模式时, Windows 以 BTHLE 枚举, 电量可从标准属性 DEVPKEY_Device_BatteryLevel
-# 读取 (GATT Battery Service)。注意: BTHLE 节点在断开后仍显示"在线"且电量是陈旧缓存,
-# 真正的在线判据是 HID-over-GATT 集合 (HID\{00001812*}) 存在 —— 本函数只认它。
+# 读取 (GATT Battery Service)。判在线分两级:
+#   1) HID-over-GATT 集合 (HID\{00001812*}) PresentOnly 存在 = 链路活跃, 直接可信;
+#   2) 集合不在场 = 蓝牙闲置省电断链(非拔配对): 若 LastConnectedTime 在 15 分钟内,
+#      仍使用电量属性缓存值(断链期间固件不放电, 缓存偏差很小)。
 _PS_BLE = r"""
 $all = Get-PnpDevice -PresentOnly
-foreach ($h in $all) {
-  if ($h.InstanceId -like 'HID\{00001812*') {
-    if ($h.InstanceId -match 'VID&..([0-9A-F]{4})_PID&([0-9A-F]{4})REV&[0-9A-F]{4}_([0-9A-F]{12})') {
-      $mac = $matches[3]
-      $dev = $all | Where-Object { $_.InstanceId -like ('BTHLE\DEV_' + $mac + '*') } | Select-Object -First 1
-      if ($dev) {
-        $b = Get-PnpDeviceProperty -InstanceId $dev.InstanceId -KeyName '{104EA319-6EE2-4701-BD47-8DDBF425BBE5} 2' -ErrorAction SilentlyContinue
-        if ($b -and $null -ne $b.Data) { Write-Output ('name=' + $dev.FriendlyName + '|pid=' + $matches[2] + '|bat=' + [int]$b.Data) }
-      }
+$hids = @($all | Where-Object { $_.InstanceId -like 'HID\{00001812*' })
+foreach ($h in $hids) {
+  if ($h.InstanceId -match 'VID&..([0-9A-F]{4})_PID&([0-9A-F]{4})_REV&[0-9A-F]{4}_([0-9A-F]{12})') {
+    $mac = $matches[3]
+    $dev = $all | Where-Object { $_.InstanceId -like ('BTHLE\DEV_' + $mac + '*') } | Select-Object -First 1
+    if ($dev) {
+      $b = Get-PnpDeviceProperty -InstanceId $dev.InstanceId -KeyName '{104EA319-6EE2-4701-BD47-8DDBF425BBE5} 2' -ErrorAction SilentlyContinue
+      if ($b -and $null -ne $b.Data) { Write-Output ('name=' + $dev.FriendlyName + '|bat=' + [int]$b.Data + '|hid=1') }
+    }
+  }
+}
+foreach ($dev in ($all | Where-Object { $_.InstanceId -like 'BTHLE\DEV_*' })) {
+  $mac = $dev.InstanceId.Split('\')[1].Replace('DEV_', '')
+  $online = $false
+  foreach ($h in $hids) { if ($h.InstanceId -like ('*' + $mac + '*')) { $online = $true } }
+  if (-not $online) {
+    $b = Get-PnpDeviceProperty -InstanceId $dev.InstanceId -KeyName '{104EA319-6EE2-4701-BD47-8DDBF425BBE5} 2' -ErrorAction SilentlyContinue
+    $lc = Get-PnpDeviceProperty -InstanceId $dev.InstanceId -KeyName 'DEVPKEY_Bluetooth_LastConnectedTime' -ErrorAction SilentlyContinue
+    if ($b -and $null -ne $b.Data -and $lc -and $null -ne $lc.Data) {
+      $lcVal = $lc.Data
+      if ($lcVal -is [DateTime]) { $age = [int][Math]::Abs(((Get-Date) - $lcVal).TotalSeconds) }
+      else { $age = [int][Math]::Abs(((Get-Date) - [DateTime]::FromFileTime([int64]$lcVal)).TotalSeconds) }
+      if ($age -lt 86400) { Write-Output ('name=' + $dev.FriendlyName + '|bat=' + [int]$b.Data + '|hid=0|age=' + $age) }
     }
   }
 }
@@ -70,13 +86,14 @@ def ble_batteries(max_age=60):
     data = {"mouse": None, "keyboard": None}
     try:
         r = subprocess.run(["powershell", "-NoProfile", "-Command", _PS_BLE],
-                           capture_output=True, text=True, timeout=25,
+                           capture_output=True, text=True, timeout=40,
+                           encoding="mbcs", errors="replace",
                            creationflags=_CREATE_NO_WINDOW)
         for line in (r.stdout or "").splitlines():
-            m = re.match(r"name=(.*)\|pid=([0-9A-Fa-f]+)\|bat=(\d+)", line.strip())
+            m = re.match(r"name=(.*)\|bat=(\d+)\|hid=(\d)(?:\|age=(\d+))?", line.strip())
             if not m:
                 continue
-            name, bat = m.group(1).lower(), int(m.group(3))
+            name, bat = m.group(1).lower(), int(m.group(2))
             if "k7" in name:
                 data["mouse"] = bat
             elif "k99" in name:
@@ -98,22 +115,17 @@ def _mouse_frame():
     return report + b"\x00" * (64 - len(report))
 
 
-def read_mouse(attempts=6):
-    """鼠标电量: 蓝牙在线优先(Windows 电量属性), 否则 2.4G 接收器查询。"""
-    bt = ble_batteries().get("mouse")
-    if bt is not None:
-        return {"percent": bt, "charging": False, "connect": "蓝牙", "source": "ble"}
+def read_mouse(attempts=3):
+    """鼠标电量: 2.4G 接收器实时查询优先(带充电标志), 查询不到再读蓝牙电量属性。"""
     infos = [d for d in hid.enumerate(VID, MOUSE_PID_DONGLE)
              if d["usage_page"] == 0xFF01 and d["usage"] == 0x0001]
-    if not infos:
-        return None
     frame = _mouse_frame()
-    for _ in range(attempts):
+    for _ in range(attempts if infos else 0):
         try:
             dev = hid.device()
             dev.open_path(infos[0]["path"])
         except OSError:
-            return None
+            break
         try:
             dev.set_nonblocking(True)
             dev.write(frame)
@@ -135,10 +147,14 @@ def read_mouse(attempts=6):
                     "source": "dongle",
                 }
         except OSError:
-            return None
+            break
         finally:
             dev.close()
         time.sleep(0.15)
+    # 2.4G 查询不到(接收器未插/鼠标不在接收器链路上) → 蓝牙电量属性兜底
+    bt = ble_batteries().get("mouse")
+    if bt is not None:
+        return {"percent": bt, "charging": False, "connect": "蓝牙", "source": "ble"}
     return None
 
 
