@@ -20,10 +20,16 @@
 """
 import json
 import os
+import re
+import subprocess
+import sys
 import threading
 import time
 
 import hid
+
+# 图形界面程序调用控制台子进程时禁止弹出黑窗
+_CREATE_NO_WINDOW = 0x08000000 if sys.platform == "win32" else 0
 
 VID = 0x3837
 MOUSE_PID_DONGLE = 0x1014
@@ -31,6 +37,55 @@ KBD_PID_DONGLE = 0x3033
 
 _CACHE_DIR = os.path.join(os.environ.get("LOCALAPPDATA", os.path.expanduser("~")), "MCHOSEBattery")
 _KB_CACHE_FILE = os.path.join(_CACHE_DIR, "keyboard.json")
+
+
+# ---------------- 蓝牙模式 ----------------
+# 设备切蓝牙模式时, Windows 以 BTHLE 枚举, 电量可从标准属性 DEVPKEY_Device_BatteryLevel
+# 读取 (GATT Battery Service)。注意: BTHLE 节点在断开后仍显示"在线"且电量是陈旧缓存,
+# 真正的在线判据是 HID-over-GATT 集合 (HID\{00001812*}) 存在 —— 本函数只认它。
+_PS_BLE = r"""
+$all = Get-PnpDevice -PresentOnly
+foreach ($h in $all) {
+  if ($h.InstanceId -like 'HID\{00001812*') {
+    if ($h.InstanceId -match 'VID&..([0-9A-F]{4})_PID&([0-9A-F]{4})REV&[0-9A-F]{4}_([0-9A-F]{12})') {
+      $mac = $matches[3]
+      $dev = $all | Where-Object { $_.InstanceId -like ('BTHLE\DEV_' + $mac + '*') } | Select-Object -First 1
+      if ($dev) {
+        $b = Get-PnpDeviceProperty -InstanceId $dev.InstanceId -KeyName '{104EA319-6EE2-4701-BD47-8DDBF425BBE5} 2' -ErrorAction SilentlyContinue
+        if ($b -and $null -ne $b.Data) { Write-Output ('name=' + $dev.FriendlyName + '|pid=' + $matches[2] + '|bat=' + [int]$b.Data) }
+      }
+    }
+  }
+}
+"""
+
+_ble_cache = {"ts": 0.0, "data": {"mouse": None, "keyboard": None}}
+
+
+def ble_batteries(max_age=60):
+    """蓝牙在线的 MCHOSE 设备电量: {'mouse': %|None, 'keyboard': %|None}。60 秒缓存。"""
+    now = time.monotonic()
+    if now - _ble_cache["ts"] < max_age:
+        return _ble_cache["data"]
+    data = {"mouse": None, "keyboard": None}
+    try:
+        r = subprocess.run(["powershell", "-NoProfile", "-Command", _PS_BLE],
+                           capture_output=True, text=True, timeout=25,
+                           creationflags=_CREATE_NO_WINDOW)
+        for line in (r.stdout or "").splitlines():
+            m = re.match(r"name=(.*)\|pid=([0-9A-Fa-f]+)\|bat=(\d+)", line.strip())
+            if not m:
+                continue
+            name, bat = m.group(1).lower(), int(m.group(3))
+            if "k7" in name:
+                data["mouse"] = bat
+            elif "k99" in name:
+                data["keyboard"] = bat
+    except (OSError, subprocess.TimeoutExpired):
+        pass
+    _ble_cache["ts"] = now
+    _ble_cache["data"] = data
+    return data
 
 
 def _mouse_frame():
@@ -44,7 +99,10 @@ def _mouse_frame():
 
 
 def read_mouse(attempts=6):
-    """通过 2.4G 接收器查询鼠标电量。成功返回 dict, 失败/不在返回 None。"""
+    """鼠标电量: 蓝牙在线优先(Windows 电量属性), 否则 2.4G 接收器查询。"""
+    bt = ble_batteries().get("mouse")
+    if bt is not None:
+        return {"percent": bt, "charging": False, "connect": "蓝牙", "source": "ble"}
     infos = [d for d in hid.enumerate(VID, MOUSE_PID_DONGLE)
              if d["usage_page"] == 0xFF01 and d["usage"] == 0x0001]
     if not infos:
@@ -204,7 +262,11 @@ def start_keyboard_listener():
 
 
 def read_keyboard():
-    """键盘电量: 返回最近推送值(可能来自缓存)。percent 为 None 表示尚未收到推送。"""
+    """键盘电量: 蓝牙在线优先(可实时查询), 否则取 2.4G 推送监听的最近值。"""
+    bt = ble_batteries().get("keyboard")
+    if bt is not None:
+        return {"percent": bt, "charging": False, "age": None,
+                "connect": "蓝牙", "source": "ble"}
     if _kb_listener is None:
         start_keyboard_listener()
     return {
