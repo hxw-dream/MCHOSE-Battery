@@ -70,16 +70,20 @@ class App:
         self.low_notified = False
         self.notify_enabled = True
         cfg = float_window._load_config()
-        self.widget_flags = {"visible": not cfg.get("hidden", False),
-                             "size_factor": float(cfg.get("size_factor", 1.0)) or 1.0}
+        size = float(cfg.get("size_factor", 1.0)) or 1.0
+        if size not in (0.5, 0.65, 1.0, 1.25):  # 旧档位(0.75)映射到新档位
+            size = 0.65 if size < 1.0 else 1.0
+        self.widget_flags = {"visible": not cfg.get("hidden", False), "size_factor": size}
         self.icon = pystray.Icon(
             "MCHOSE", icon=draw_icon(None), title="MCHOSE 电量读取中…",
             menu=pystray.Menu(
                 pystray.MenuItem("立即刷新", lambda *_: self.refresh(), default=True),
                 pystray.MenuItem("显示浮窗", self._toggle_widget, checked=lambda *_: self.widget_flags["visible"]),
                 pystray.MenuItem("浮窗大小", pystray.Menu(
-                    pystray.MenuItem("小", lambda *_: self._set_widget_size(0.75),
-                                     radio=True, checked=lambda *_: self._widget_size() == 0.75),
+                    pystray.MenuItem("极小", lambda *_: self._set_widget_size(0.5),
+                                     radio=True, checked=lambda *_: self._widget_size() == 0.5),
+                    pystray.MenuItem("小", lambda *_: self._set_widget_size(0.65),
+                                     radio=True, checked=lambda *_: self._widget_size() == 0.65),
                     pystray.MenuItem("标准", lambda *_: self._set_widget_size(1.0),
                                      radio=True, checked=lambda *_: self._widget_size() == 1.0),
                     pystray.MenuItem("大", lambda *_: self._set_widget_size(1.25),

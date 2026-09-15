@@ -20,9 +20,9 @@ _CONFIG_FILE = os.path.join(_CONFIG_DIR, "widget.json")
 # ---- 设计令牌 (逻辑像素, 运行时乘以 dpi 缩放) ----
 CARD_W, CARD_H = 330, 104
 PAD = 17
-BG = (23, 25, 30, 255)
-STROKE = (42, 45, 53, 255)
-TRACK = (38, 41, 50, 255)
+BG = (0, 0, 0, 255)
+STROKE = (45, 45, 45, 255)
+TRACK = (32, 32, 32, 255)
 TEXT = (232, 234, 237, 255)
 DIM = (139, 144, 155, 255)
 GREEN = (61, 214, 140, 255)
