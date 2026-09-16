@@ -1,14 +1,14 @@
 """MCHOSE 电量托盘程序。
 
 托盘图标实时显示鼠标电量(数字直接画在图标上), 悬停看详情, 低电量弹通知。
-键盘电量: 2.4G 协议待破解, 当前显示 "--"; 键盘切蓝牙模式时自动改读蓝牙属性。
 
 用法:
     python tray_app.py            # 正常启动(建议用 pythonw 运行, 无控制台)
     python tray_app.py --selftest # 只读一次电量打印后退出
     python tray_app.py --smoke    # 启动托盘 5 秒后自动退出(冒烟测试)
+    python tray_app.py --version  # 版本号
 """
-__version__ = "2.0"
+__version__ = "3.1"
 
 import ctypes
 import sys
@@ -21,9 +21,14 @@ from PIL import Image, ImageDraw, ImageFont
 
 import battery
 import float_window
+import log
+
+log_ = log.get_logger("tray")
+log.get_logger("battery")  # 确保根日志配置先于任何子 logger 使用
 
 POLL_SECONDS = 5
 LOW_BATTERY = 20
+REARM_HYSTERESIS = 5  # 回到 20+5=25% 以上重新布防, 避免临界反复弹窗
 
 FONT_CANDIDATES = [r"C:\Windows\Fonts\segoeui.ttf", r"C:\Windows\Fonts\msyh.ttc"]
 
@@ -69,6 +74,8 @@ class App:
     def __init__(self):
         self.state = {"mouse": None, "keyboard": None, "ts": 0.0}
         self.low_notified = False
+        self.kb_low_notified = False
+        self._last_icon_sig = None
         self.notify_enabled = True
         cfg = float_window._load_config()
         size = float(cfg.get("size_factor", 1.0)) or 1.0
@@ -106,6 +113,7 @@ class App:
         cfg = float_window._load_config()
         cfg["size_factor"] = factor
         float_window.save_config(cfg)
+
     def _toggle_notify(self, *_):
         self.notify_enabled = not self.notify_enabled
 
@@ -126,10 +134,12 @@ class App:
         try:
             self.state["mouse"] = battery.read_mouse()
         except Exception:
+            log_.exception("鼠标读取异常")
             self.state["mouse"] = None
         try:
             self.state["keyboard"] = battery.read_keyboard()
         except Exception:
+            log_.exception("键盘读取异常")
             self.state["keyboard"] = None
         self.state["ts"] = time.monotonic()
         self._update_ui()
@@ -146,25 +156,33 @@ class App:
         m = self.state["mouse"]
         percent = m["percent"] if m else None
         charging = bool(m and m.get("charging"))
-        self.icon.icon = draw_icon(percent, charging)
+        sig = (percent, charging)
+        if sig != self._last_icon_sig:  # 数据未变则跳过 ICO 重编码与图标刷新
+            self._last_icon_sig = sig
+            self.icon.icon = draw_icon(percent, charging)
         self.icon.title = "MCHOSE 电量\n" + "\n".join([
             self._fmt(m, "鼠标"),
             self._fmt(self.state["keyboard"], "键盘"),
         ])
 
     def _low_battery_check(self):
-        m = self.state["mouse"]
-        if not self.notify_enabled or m is None:
+        if not self.notify_enabled:
             return
-        p = m["percent"]
-        if p <= LOW_BATTERY and not self.low_notified:
-            self.low_notified = True
-            try:
-                self.icon.notify(f"鼠标电量 {p}%，请及时充电", "MCHOSE 低电量提醒")
-            except Exception:
-                pass
-        elif p > LOW_BATTERY + 5:
-            self.low_notified = False
+        for name, key, notified_flag in (("鼠标", "mouse", "low_notified"),
+                                         ("键盘", "keyboard", "kb_low_notified")):
+            st = self.state.get(key)
+            p = st.get("percent") if st else None
+            if p is None:
+                continue
+            if p <= LOW_BATTERY and not getattr(self, notified_flag):
+                setattr(self, notified_flag, True)
+                log_.info("%s 低电量提醒: %d%%", name, p)
+                try:
+                    self.icon.notify(f"{name}电量 {p}%，请及时充电", "MCHOSE 低电量提醒")
+                except Exception:
+                    pass
+            elif p > LOW_BATTERY + REARM_HYSTERESIS:
+                setattr(self, notified_flag, False)
 
     def loop(self):
         while True:
@@ -221,8 +239,21 @@ def _enable_dark_menus():
         pass
 
 
+def _single_instance_guard():
+    """命名互斥量防止双开(双图标 + HID 句柄争用)。返回 False 表示已有实例。"""
+    ctypes.windll.kernel32.CreateMutexW(None, False, "MCHOSEBattery_SingleInstance")
+    return ctypes.windll.kernel32.GetLastError() != 183  # ERROR_ALREADY_EXISTS
+
+
 def main():
+    if "--version" in sys.argv:
+        print(__version__)
+        return
+    if not _single_instance_guard():
+        log_.warning("已有实例在运行, 退出")
+        return
     _enable_dark_menus()
+    log_.info("MCHOSE Battery v%s 启动", __version__)
     battery.start_keyboard_listener()  # 键盘电量推送常驻监听
     app = App()
     if "--selftest" in sys.argv:

@@ -12,13 +12,13 @@
   命令通道: usagePage 0x0001 / usage 0x0000 集合, output report 无编号(0x00 前缀)
   Z 帧: [0x55, cmd, 0x00, cs, size, offLo, offHi, 0x00, ...data]
         cs = size^offLo^offHi^0x00; 应答 [0xAA, cmd, 0x00, len, size, offLo, offHi, 0, data...]
-  电量无查询命令, 由键盘异步推送:
+  电量无查询命令, 由键盘异步推送(事件驱动, 无固定周期):
         FA FB 07 <电量%> <充电标志>                       (老通道广播)
-        [AA, x, 00, 00, 07, biz, seq, 掩码Lo, 掩码Hi, 充电, 电量, 连接, ...]  (MANUAL_REPORT, 23 字段)
-  推送为事件驱动: 电量变化 / 充电插拔 / 连接事件时触发, 无固定周期。
-  因此 KeyboardListener 常驻监听, 最近数值落盘缓存, 托盘显示推送时间。
+        [AA 07 00 len size offLo offHi 00 掩码Lo 掩码Hi 充电 电量 ...]  (MANUAL_REPORT)
+  因此 KeyboardListener 常驻监听, 最近数值落盘缓存。
 """
 import json
+import logging
 import os
 import re
 import subprocess
@@ -27,6 +27,11 @@ import threading
 import time
 
 import hid
+
+import log
+
+log.get_logger("battery")  # 初始化根配置
+log_ = log.get_logger("battery.read")
 
 # 图形界面程序调用控制台子进程时禁止弹出黑窗
 _CREATE_NO_WINDOW = 0x08000000 if sys.platform == "win32" else 0
@@ -39,12 +44,65 @@ _CACHE_DIR = os.path.join(os.environ.get("LOCALAPPDATA", os.path.expanduser("~")
 _KB_CACHE_FILE = os.path.join(_CACHE_DIR, "keyboard.json")
 
 
+# ---------------- 纯解析函数(可单测) ----------------
+def mouse_query_frame():
+    """鼠标 0x0900 电量查询帧: 0x4D 前缀 + M 帧 + 零填充至 64 字节。"""
+    body = bytearray([0x01, 0x01, 0x00, 0x00, 0x09, 0x00, 0x00])
+    cs = 0
+    for x in body[1:]:
+        cs ^= x
+    body.append(cs)
+    report = bytes([0x4D]) + bytes(body)
+    return report + b"\x00" * (64 - len(report))
+
+
+def parse_mouse_reply(raw):
+    """鼠标 0x0900 回复 -> dict | None。"""
+    if len(raw) < 21 or raw[0] != 0x4D or raw[4] != 0x00 or raw[5] != 0x09:
+        return None
+    if raw[8] == 0xFF:  # 设备忙
+        return None
+    return {
+        "percent": raw[20],
+        "charging": raw[19] != 0,
+        "connect": {2: "2.4G"}.get(raw[18], f"mode{raw[18]}"),
+        "source": "dongle",
+    }
+
+
+def parse_legacy_battery(raw):
+    """FA FB 07 老通道电量广播 -> (percent, charging) | None。"""
+    if len(raw) > 4 and raw[0] == 0xFA and raw[1] == 0xFB and raw[2] == 0x07:
+        if 0 <= raw[3] <= 100:
+            return raw[3], raw[4] != 0
+    return None
+
+
+def parse_manual_report(raw):
+    """MANUAL_REPORT 推送 (Z 帧广播, 命令 0x0700) -> (percent, charging) | None。
+    data[2]=充电(0/1/2) data[3]=电量% data[4]=连接(1有线/2无线)。"""
+    if len(raw) > 11 and raw[0] == 0xAA and raw[1] == 0x07 and raw[2] == 0x00:
+        charge, percent = raw[10], raw[11]
+        if 0 <= percent <= 100:
+            return percent, charge == 1
+    return None
+
+
+def match_device_name(friendly_name):
+    """蓝牙 FriendlyName -> "mouse" | "keyboard" | None。"""
+    n = (friendly_name or "").lower()
+    if "k7" in n:
+        return "mouse"
+    if "k99" in n:
+        return "keyboard"
+    return None
+
+
 # ---------------- 蓝牙模式 ----------------
-# 设备切蓝牙模式时, Windows 以 BTHLE 枚举, 电量可从标准属性 DEVPKEY_Device_BatteryLevel
-# 读取 (GATT Battery Service)。判在线分两级:
+# 判在线分两级:
 #   1) HID-over-GATT 集合 (HID\{00001812*}) PresentOnly 存在 = 链路活跃, 直接可信;
-#   2) 集合不在场 = 蓝牙闲置省电断链(非拔配对): 若 LastConnectedTime 在 15 分钟内,
-#      仍使用电量属性缓存值(断链期间固件不放电, 缓存偏差很小)。
+#   2) 集合不在场 = 蓝牙闲置省电断链(非拔配对): LastConnectedTime 在 24 小时内
+#      仍使用电量属性缓存值(断链期间固件近乎不放电, 缓存偏差很小)。
 _PS_BLE = r"""
 $all = Get-PnpDevice -PresentOnly
 $hids = @($all | Where-Object { $_.InstanceId -like 'HID\{00001812*' })
@@ -77,16 +135,18 @@ foreach ($dev in ($all | Where-Object { $_.InstanceId -like 'BTHLE\DEV_*' })) {
 
 _ble_cache = {"ts": 0.0, "data": {"mouse": None, "keyboard": None,
                                   "mouse_live": False, "keyboard_live": False}}
+BLE_TTL = 120  # 秒; PS 扫描单次 2~5 秒 CPU, 拉长间隔降低占用
 
 
-def ble_batteries(max_age=60):
+def ble_batteries(max_age=BLE_TTL):
     """蓝牙 MCHOSE 设备电量。返回 dict:
     mouse/keyboard = 百分比|None; *_live = True 表示 BLE 链路硬在线(实时可信),
-    False 表示闲置断链的 GATT 缓存(24 小时内连接过)。60 秒缓存。"""
+    False 表示闲置断链的 GATT 缓存(24 小时内连接过)。"""
     now = time.monotonic()
     if now - _ble_cache["ts"] < max_age:
         return _ble_cache["data"]
     data = {"mouse": None, "keyboard": None, "mouse_live": False, "keyboard_live": False}
+    t0 = time.monotonic()
     try:
         r = subprocess.run(["powershell", "-NoProfile", "-Command", _PS_BLE],
                            capture_output=True, text=True, timeout=40,
@@ -96,38 +156,29 @@ def ble_batteries(max_age=60):
             m = re.match(r"name=(.*)\|bat=(\d+)\|hid=(\d)(?:\|age=(\d+))?", line.strip())
             if not m:
                 continue
-            name, bat, live = m.group(1).lower(), int(m.group(2)), m.group(3) == "1"
-            if "k7" in name:
-                data["mouse"], data["mouse_live"] = bat, live
-            elif "k99" in name:
-                data["keyboard"], data["keyboard_live"] = bat, live
+            dev = match_device_name(m.group(1))
+            bat, live = int(m.group(2)), m.group(3) == "1"
+            if dev:
+                data[dev], data[dev + "_live"] = bat, live
     except (OSError, subprocess.TimeoutExpired):
-        pass
+        log_.warning("BLE 扫描失败/超时")
+    log_.debug("BLE 扫描耗时 %.1fs: %s", time.monotonic() - t0, data)
     _ble_cache["ts"] = now
     _ble_cache["data"] = data
     return data
-
-
-def _mouse_frame():
-    body = bytearray([0x01, 0x01, 0x00, 0x00, 0x09, 0x00, 0x00])
-    cs = 0
-    for x in body[1:]:
-        cs ^= x
-    body.append(cs)
-    report = bytes([0x4D]) + bytes(body)
-    return report + b"\x00" * (64 - len(report))
 
 
 def read_mouse(attempts=3):
     """鼠标电量: 2.4G 接收器实时查询优先(带充电标志), 查询不到再读蓝牙电量属性。"""
     infos = [d for d in hid.enumerate(VID, MOUSE_PID_DONGLE)
              if d["usage_page"] == 0xFF01 and d["usage"] == 0x0001]
-    frame = _mouse_frame()
+    frame = mouse_query_frame()
     for _ in range(attempts if infos else 0):
         try:
             dev = hid.device()
             dev.open_path(infos[0]["path"])
-        except OSError:
+        except OSError as e:
+            log_.debug("鼠标集合打开失败: %s", e)
             break
         try:
             dev.set_nonblocking(True)
@@ -138,18 +189,11 @@ def read_mouse(attempts=3):
                 if not data:
                     time.sleep(0.005)  # 避免忙等待空转 CPU
                     continue
-                raw = bytes(data)
-                if raw[0] != 0x4D or raw[4] != 0x00 or raw[5] != 0x09:
-                    continue
-                if raw[8] == 0xFF:  # 设备忙, 重发
-                    break
-                return {
-                    "percent": raw[20],
-                    "charging": raw[19] != 0,
-                    "connect": {2: "2.4G"}.get(raw[18], f"mode{raw[18]}"),
-                    "source": "dongle",
-                }
-        except OSError:
+                st = parse_mouse_reply(bytes(data))
+                if st:
+                    return st
+        except OSError as e:
+            log_.debug("鼠标查询 IO 错误: %s", e)
             break
         finally:
             dev.close()
@@ -162,7 +206,8 @@ def read_mouse(attempts=3):
 
 
 class KeyboardListener(threading.Thread):
-    """常驻监听 K99 V3 键盘的电量推送帧。daemon 线程, 崩溃自动重开设备。"""
+    """常驻监听 K99 V3 键盘的电量推送帧。
+    外层守卫保证任何异常都不会永久杀死线程(3 秒后重开设备)。"""
 
     def __init__(self):
         super().__init__(daemon=True)
@@ -170,6 +215,7 @@ class KeyboardListener(threading.Thread):
         self.charging = None
         self.ts = 0.0          # 最近一次推送的 unix 时间
         self.connected = None  # FA FB 06 广播: True=通信开始
+        self.pushes = 0        # 会话内收到的电量推送数(诊断用)
         self._stop = False
         self._load_cache()
 
@@ -181,6 +227,7 @@ class KeyboardListener(threading.Thread):
             self.percent = d.get("percent")
             self.charging = d.get("charging")
             self.ts = d.get("ts", 0.0)
+            log_.info("键盘缓存载入: %s%% (%s)", self.percent, time.strftime("%m-%d %H:%M", time.localtime(self.ts)))
         except (OSError, ValueError):
             pass
 
@@ -194,31 +241,40 @@ class KeyboardListener(threading.Thread):
 
     # ---- 解析 ----
     def _feed(self, raw):
-        if raw[0] == 0xFA and raw[1] == 0xFB:
-            if raw[2] == 0x07 and len(raw) > 4:  # 电量广播(充电事件时)
-                percent = raw[3]
-                if 0 <= percent <= 100:
-                    self.percent = percent
-                    self.charging = raw[4] != 0
-                    self.ts = time.time()
-                    self._save_cache()
-            elif raw[2] == 0x06:  # 通信状态广播: 键盘与接收器链路建立/断开 = 切模式信号
-                if self.connected is not None and self.connected != (raw[3] == 0):
-                    _ble_cache["ts"] = 0.0  # 立即作废蓝牙扫描缓存, 下轮轮询即可反映新模式
-                self.connected = raw[3] == 0
-        elif raw[0] == 0xAA and raw[1] == 0x07 and raw[2] == 0x00 and len(raw) > 11:
-            # MANUAL_REPORT 推送 (Z 帧广播, 命令 0x0700):
-            # [AA 07 00 len size offLo offHi 00 | data[0..22]]
-            # data[0..1]=变更掩码 data[2]=充电(0/1/2) data[3]=电量% data[4]=连接(1有线/2无线)
-            charge, percent = raw[10], raw[11]
-            if 0 <= percent <= 100:
-                self.percent = percent
-                self.charging = charge == 1
-                self.ts = time.time()
-                self._save_cache()
+        parsed = parse_legacy_battery(raw)
+        if parsed:
+            self._apply(*parsed)
+            return
+        if raw[0] == 0xFA and raw[1] == 0xFB and raw[2] == 0x06:  # 链路建立/断开 = 切模式信号
+            online = raw[3] == 0
+            if self.connected is not None and self.connected != online:
+                _ble_cache["ts"] = 0.0  # 立即作废蓝牙扫描缓存, 下轮轮询即可反映新模式
+                log_.info("键盘链路%s, 已作废蓝牙缓存", "建立" if online else "断开")
+            self.connected = online
+            return
+        parsed = parse_manual_report(raw)
+        if parsed:
+            self._apply(*parsed)
+            log_.debug("MANUAL_REPORT: %s%% charging=%s", *parsed)
+
+    def _apply(self, percent, charging):
+        self.percent = percent
+        self.charging = charging
+        self.ts = time.time()
+        self.pushes += 1
+        self._save_cache()
+        log_.info("键盘电量推送 #%d: %d%% charging=%s", self.pushes, percent, charging)
 
     # ---- 线程 ----
     def run(self):
+        while not self._stop:
+            try:
+                self._run_once()
+            except Exception:
+                log_.exception("键盘监听线程异常, 3 秒后重启")
+                time.sleep(3)
+
+    def _run_once(self):
         warmups = (bytes([0x55, 0x03, 0x00, 0x38, 0x38, 0x00, 0x00, 0x00]),
                    bytes([0x55, 0x04, 0x00, 0x38, 0x38, 0x00, 0x00, 0x00]))
         while not self._stop:
@@ -232,13 +288,13 @@ class KeyboardListener(threading.Thread):
                 dev = hid.device()
                 dev.open_path(info["path"])
                 dev.set_nonblocking(True)
+                log_.debug("键盘监听: 设备已打开")
                 for f in warmups:  # 唤醒命令通道(复刻官方首命令)
                     dev.write(bytes([0x00]) + f + b"\x00" * 55)
                     time.sleep(0.15)
                 t0 = time.monotonic()
                 while time.monotonic() - t0 < 1.0:
                     dev.read(64, timeout_ms=0)
-                t0 = time.monotonic()
                 idle = 0.0
                 while not self._stop:
                     try:
@@ -279,6 +335,7 @@ def start_keyboard_listener():
     if _kb_listener is None:
         _kb_listener = KeyboardListener()
         _kb_listener.start()
+        log_.info("键盘推送监听已启动")
     return _kb_listener
 
 
@@ -304,22 +361,6 @@ def read_keyboard():
         return {"percent": ble["keyboard"], "charging": False, "age": None,
                 "connect": "蓝牙", "source": "ble"}
     return None
-
-
-if __name__ == "__main__":
-    print("鼠标:", read_mouse())
-    kb = read_keyboard()
-    if kb["percent"] is None:
-        print("键盘: 等待推送...")
-        time.sleep(20)
-        kb = read_keyboard()
-    if kb["percent"] is not None:
-        age = kb.get("age")
-        age_s = f", {age/60:.0f} 分钟前推送" if age and age > 90 else ""
-        print(f"键盘: {kb['percent']}%{age_s}")
-    else:
-        print("键盘: 未收到电量推送(推送为事件驱动, 电量变化/充电插拔时才会发出)")
-
 
 
 if __name__ == "__main__":
