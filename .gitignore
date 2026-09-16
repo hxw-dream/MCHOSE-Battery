@@ -8,7 +8,15 @@
 !/battery.py
 !/tray_app.py
 !/float_window.py
+!/tray_icon.py
+!/log.py
+!/requirements.txt
 !/start.bat
+
+# 单元测试
+!/tests/
+/tests/*
+!/tests/test_frames.py
 
 # tools/ 里只收录协议验证与抓包方法脚本(不含官方 JS、浏览器配置、一次性脚本)
 !/tools/

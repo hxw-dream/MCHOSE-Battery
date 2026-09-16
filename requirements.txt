@@ -1,0 +1,6 @@
+hidapi>=0.14
+pystray>=0.19
+Pillow>=10.0
+
+# 打包(可选)
+# pyinstaller>=6.0
