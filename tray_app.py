@@ -27,8 +27,8 @@ log_ = log.get_logger("tray")
 log.get_logger("battery")  # 确保根日志配置先于任何子 logger 使用
 
 POLL_SECONDS = 5
-LOW_BATTERY = 20
-REARM_HYSTERESIS = 5  # 回到 20+5=25% 以上重新布防, 避免临界反复弹窗
+LOW_BATTERY = 15
+REARM_HYSTERESIS = 5  # 回到 15+5=20% 以上重新布防, 避免临界反复弹窗
 LOW_CONFIRM = 3       # 连续 3 次(约 15 秒)低读数才弹窗, 杜绝瞬时坏帧误报
 
 FONT_CANDIDATES = [r"C:\Windows\Fonts\segoeui.ttf", r"C:\Windows\Fonts\msyh.ttc"]
