@@ -29,6 +29,7 @@ log.get_logger("battery")  # 确保根日志配置先于任何子 logger 使用
 POLL_SECONDS = 5
 LOW_BATTERY = 20
 REARM_HYSTERESIS = 5  # 回到 20+5=25% 以上重新布防, 避免临界反复弹窗
+LOW_CONFIRM = 3       # 连续 3 次(约 15 秒)低读数才弹窗, 杜绝瞬时坏帧误报
 
 FONT_CANDIDATES = [r"C:\Windows\Fonts\segoeui.ttf", r"C:\Windows\Fonts\msyh.ttc"]
 
@@ -75,6 +76,7 @@ class App:
         self.state = {"mouse": None, "keyboard": None, "ts": 0.0}
         self.low_notified = False
         self.kb_low_notified = False
+        self._low_streak = {"mouse": 0, "keyboard": 0}
         self._last_icon_sig = None
         self.notify_enabled = True
         cfg = float_window._load_config()
@@ -174,15 +176,21 @@ class App:
             p = st.get("percent") if st else None
             if p is None:
                 continue
-            if p <= LOW_BATTERY and not getattr(self, notified_flag):
-                setattr(self, notified_flag, True)
-                log_.info("%s 低电量提醒: %d%%", name, p)
-                try:
-                    self.icon.notify(f"{name}电量 {p}%，请及时充电", "MCHOSE 低电量提醒")
-                except Exception:
-                    pass
-            elif p > LOW_BATTERY + REARM_HYSTERESIS:
-                setattr(self, notified_flag, False)
+            if p <= LOW_BATTERY:
+                self._low_streak[key] += 1
+                log_.info("%s 低读数 #%d: %d%% (source=%s)",
+                          name, self._low_streak[key], p, st.get("source"))
+                if self._low_streak[key] >= LOW_CONFIRM and not getattr(self, notified_flag):
+                    setattr(self, notified_flag, True)
+                    log_.info("%s 低电量提醒(已连续确认): %d%%", name, p)
+                    try:
+                        self.icon.notify(f"{name}电量 {p}%，请及时充电", "MCHOSE 低电量提醒")
+                    except Exception:
+                        pass
+            else:
+                self._low_streak[key] = 0
+                if p > LOW_BATTERY + REARM_HYSTERESIS:
+                    setattr(self, notified_flag, False)
 
     def loop(self):
         while True:
@@ -249,14 +257,9 @@ def main():
     if "--version" in sys.argv:
         print(__version__)
         return
-    if not _single_instance_guard():
-        log_.warning("已有实例在运行, 退出")
-        return
-    _enable_dark_menus()
-    log_.info("MCHOSE Battery v%s 启动", __version__)
-    battery.start_keyboard_listener()  # 键盘电量推送常驻监听
-    app = App()
     if "--selftest" in sys.argv:
+        # 诊断模式: 不需要托盘/监听, 也不受单实例守卫限制(运行中的实例不影响)
+        app = App()
         app.refresh()
         m, k = app.state["mouse"], app.state["keyboard"]
         print("鼠标:", m)
@@ -264,6 +267,13 @@ def main():
         print("图标渲染:", "OK" if draw_icon(85) else "FAIL")
         print("浮窗渲染:", "OK" if float_window.render_card(app.state) else "FAIL")
         return
+    if not _single_instance_guard():
+        log_.warning("已有实例在运行, 退出")
+        return
+    _enable_dark_menus()
+    log_.info("MCHOSE Battery v%s 启动", __version__)
+    battery.start_keyboard_listener()  # 键盘电量推送常驻监听
+    app = App()
     if "--smoke" in sys.argv:
         threading.Thread(target=lambda: (time.sleep(5), app._quit()), daemon=True).start()
         threading.Thread(target=float_window.run_widget,

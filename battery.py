@@ -62,6 +62,8 @@ def parse_mouse_reply(raw):
         return None
     if raw[8] == 0xFF:  # 设备忙
         return None
+    if not (1 <= raw[20] <= 100):
+        return None  # 链路切换瞬间接收器可能回"无设备"帧(电量字节=0), 不采纳
     return {
         "percent": raw[20],
         "charging": raw[19] != 0,
