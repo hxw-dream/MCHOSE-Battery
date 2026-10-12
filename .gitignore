@@ -3,6 +3,7 @@
 
 # 核心程序与文档
 !/.gitignore
+!/AGENTS.md
 !/README.md
 !/LICENSE
 !/battery.py
