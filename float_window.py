@@ -14,6 +14,9 @@ import tkinter as tk
 
 from PIL import Image, ImageDraw, ImageTk, ImageFont
 
+import log
+
+log_ = log.get_logger("widget")
 _CONFIG_DIR = os.path.join(os.environ.get("LOCALAPPDATA", os.path.expanduser("~")), "MCHOSEBattery")
 _CONFIG_FILE = os.path.join(_CONFIG_DIR, "widget.json")
 
@@ -38,11 +41,11 @@ def _font(kind, scale):
     if key not in _FONT_CACHE:
         try:
             if kind == "num":
-                f = ImageFont.truetype(r"C:\Windows\Fonts\msyhbd.ttc", 17 * scale)
+                f = ImageFont.truetype(r"C:\Windows\Fonts\msyhbd.ttc", max(1, round(17 * scale)))
             elif kind == "label":
-                f = ImageFont.truetype(r"C:\Windows\Fonts\msyh.ttc", 14 * scale)
+                f = ImageFont.truetype(r"C:\Windows\Fonts\msyh.ttc", max(1, round(14 * scale)))
             else:
-                f = ImageFont.truetype(r"C:\Windows\Fonts\msyh.ttc", 11 * scale)
+                f = ImageFont.truetype(r"C:\Windows\Fonts\msyh.ttc", max(1, round(11 * scale)))
         except OSError:
             f = ImageFont.load_default()
         _FONT_CACHE[key] = f
@@ -54,7 +57,12 @@ def _level_color(percent, charging):
         return GREEN
     if percent is None:
         return TRACK
-    return GREEN if percent > 50 else AMBER if percent > 20 else RED
+    return GREEN if percent > 50 else AMBER if percent > 15 else RED
+
+
+def card_size(scale):
+    """逻辑尺寸乘连续缩放系数，仅最终像素尺寸取整。"""
+    return max(1, round(CARD_W * scale)), max(1, round(CARD_H * scale))
 
 
 def _draw_bolt(draw, cx, cy, s, fill):
@@ -68,11 +76,11 @@ def _draw_bolt(draw, cx, cy, s, fill):
 def render_card(state, scale=2):
     """state: {"mouse": st|None, "keyboard": st|None} -> PIL.Image (逻辑尺寸 x scale)"""
     f_num, f_label, f_dim = (_font(k, scale) for k in ("num", "label", "dim"))
-    img = Image.new("RGBA", (CARD_W * scale, CARD_H * scale), KEY)
+    img = Image.new("RGBA", card_size(scale), KEY)
     d = ImageDraw.Draw(img)
     box = [scale, scale, (CARD_W - 2) * scale, (CARD_H - 2) * scale]
     d.rounded_rectangle(box, radius=11 * scale, fill=BG)
-    d.rounded_rectangle(box, radius=11 * scale, outline=STROKE, width=scale)
+    d.rounded_rectangle(box, radius=11 * scale, outline=STROKE, width=max(1, round(scale)))
 
     rows = [("鼠标", state.get("mouse")), ("键盘", state.get("keyboard"))]
     row_h = (CARD_H - 2 * PAD) / 2
@@ -127,7 +135,7 @@ def save_config(cfg):
         with open(_CONFIG_FILE, "w", encoding="utf-8") as f:
             json.dump(cfg, f)
     except OSError:
-        pass
+        log_.exception("浮窗配置保存失败")
 
 
 class Widget:
@@ -145,6 +153,7 @@ class Widget:
         except Exception:
             pass
         self.tk = tk.Tk()
+        self.tk.report_callback_exception = lambda *_: log_.error("浮窗回调异常", exc_info=_)
         self.tk.overrideredirect(True)
         self.tk.attributes("-topmost", True)
         self.tk.configure(bg=f"#{KEY[0]:02x}{KEY[1]:02x}{KEY[2]:02x}")
@@ -157,10 +166,10 @@ class Widget:
             dpi = self.tk.winfo_fpixels("1i")
         except tk.TclError:
             dpi = 96
-        self.dpi_scale = max(1, round(dpi / 96))
+        self.dpi_scale = max(0.5, dpi / 96)
         self.size_factor = float(self.flags.get("size_factor", 1.0)) or 1.0
-        self.scale = max(1, round(self.dpi_scale * self.size_factor))
-        w, h = CARD_W * self.scale, CARD_H * self.scale
+        self.scale = max(0.5, self.dpi_scale * self.size_factor)
+        w, h = card_size(self.scale)
         sw = self.tk.winfo_screenwidth()
         sh = self.tk.winfo_screenheight()
         x = int(self.cfg.get("x", sw - w - 30))
@@ -184,7 +193,7 @@ class Widget:
         self.tk.after(400, self._tick)
 
     def _default_pos(self):
-        w, h = CARD_W * self.scale, CARD_H * self.scale
+        w, h = card_size(self.scale)
         return (self.tk.winfo_screenwidth() - w - 30, self.tk.winfo_screenheight() - h - 90)
 
     # ---- 托盘控制的可见性 ----
@@ -229,12 +238,19 @@ class Widget:
 
     # ---- 数据轮询与重绘 ----
     def _tick(self):
+        if self.flags.get("stop"):
+            TK_HOLDER.pop("root", None)
+            self.label.configure(image="")
+            self._photo = None  # 在所属 Tk 线程释放 ImageTk 对象
+            self.tk.destroy()
+            return
         # 托盘切档位: 尺寸即时变化, 内容强制重绘
         new_factor = float(self.flags.get("size_factor", 1.0)) or 1.0
         if new_factor != self.size_factor:
             self.size_factor = new_factor
-            self.scale = max(1, round(self.dpi_scale * new_factor))
-            self.tk.geometry(f"{CARD_W * self.scale}x{CARD_H * self.scale}")
+            self.scale = max(0.5, self.dpi_scale * new_factor)
+            w, h = card_size(self.scale)
+            self.tk.geometry(f"{w}x{h}")
             self.last_sig = None
         # 托盘"恢复默认位置"
         if self.flags.pop("reset_pos", False):
@@ -269,7 +285,7 @@ def run_widget(state_getter, flags):
     try:
         Widget(state_getter, flags).run()
     except Exception:
-        pass  # 浮窗失败不影响托盘
+        log_.exception("浮窗运行失败")
 
 
 # ---- 托盘线程 -> tk 线程的调用桥 ----
@@ -326,7 +342,7 @@ def show_menu(items, x, y):
             try:
                 action()
             except Exception:
-                pass
+                log_.exception("浮窗菜单动作失败")
 
     def add_row(parent, spec):
         label = spec["label"]

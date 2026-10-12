@@ -43,6 +43,19 @@ class MouseReplyTests(unittest.TestCase):
         raw[5] = 0x08
         self.assertIsNone(battery.parse_mouse_reply(bytes(raw)))
 
+    def test_no_device_zero_percent(self):
+        self.assertIsNone(battery.parse_mouse_reply(self._reply(0)))
+
+    def test_percent_boundaries(self):
+        for value in (1, 100):
+            with self.subTest(value=value):
+                self.assertEqual(battery.parse_mouse_reply(self._reply(value))["percent"], value)
+        for value in (101, 255):
+            self.assertIsNone(battery.parse_mouse_reply(self._reply(value)))
+
+    def test_short_frame(self):
+        self.assertIsNone(battery.parse_mouse_reply(self._reply()[:20]))
+
 
 class KeyboardPushTests(unittest.TestCase):
     def test_legacy_battery(self):

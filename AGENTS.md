@@ -17,7 +17,7 @@ Windows 系统托盘小工具：实时显示 MCHOSE 鼠标（K7 V2 Ultra+）与�
 | 只读一次电量并退出 | `python tray_app.py --selftest` | tray_app.py `main()` |
 | 冒烟测试（托盘 5 秒自动退出） | `python tray_app.py --smoke` | tray_app.py `main()` |
 | 查看版本 | `python tray_app.py --version` | tray_app.py `main()` |
-| 单元测试 | `python -m unittest discover tests`（11 个用例，已验证通过） | tests/test_frames.py |
+| 单元测试 | `python -m unittest discover tests`（31 个纯函数用例） | tests/test_frames.py / tests/test_behavior.py |
 | 打包独立 exe | `pyinstaller --onefile --noconsole --name MCHOSEBattery tray_app.py` | README.md"打包为独立 exe" |
 
 ## 目录结构
@@ -27,14 +27,15 @@ Windows 系统托盘小工具：实时显示 MCHOSE 鼠标（K7 V2 Ultra+）与�
 - `float_window.py` — 桌面电量浮窗（tkinter 无边框置顶、按 DPI 缩放、拖动与大小记忆，配置在 `%LOCALAPPDATA%\MCHOSEBattery\widget.json`）。
 - `tray_icon.py` — ctypes Shell_NotifyIcon 自绘托盘的备选实现，当前未被任何模块 import（tray_app 实际用 pystray）。
 - `log.py` — 共用滚动日志（`%LOCALAPPDATA%\MCHOSEBattery\logs\app.log`，1MB×2）。
-- `widget_diag.py` — 浮窗 12 秒诊断脚本，输出 widget_diag.log。
+- `widget_diag.py` — 浮窗 12 秒真机诊断脚本，核对四档实际尺寸，结果写入应用日志。
 - `tests/test_frames.py` — 协议解析单元测试（纯函数，不碰真机 HID）。
+- `tests/test_behavior.py` — 读取优先级、缓存有效性、低电量状态转换与缩放纯函数回归测试。
 - `tools/` — 逆向过程的探测/抓包/分析脚本与完整报文记录 kb_capture.log，协议结论可复核。
 - `edgeposter/`、`dist/`、`__pycache__/`、`build*/` — 非源码（Edge CDP 抓包浏览器配置目录 / 构建产物），git 已忽略，勿提交。
 
 ## 工程约定
 
-- 协议解析写成 battery.py 顶部无副作用的纯函数，单测只覆盖这些纯函数，不 mock 真机。
+- 协议解析写成 battery.py 顶部无副作用的纯函数；单测覆盖解析与策略纯函数，不 mock 真机。
 - 日志统一 `log.get_logger(name)`，不用 print；设 `MCHOSE_DEBUG=1` 额外输出 DEBUG 到 stderr。
 - GUI 调控制台子进程必须带 `CREATE_NO_WINDOW`（0x08000000）；PowerShell 输出按 mbcs 解码（UTF-8 解码线程遇非 ASCII 字节会崩，v3.0 的教训）。
 - `.gitignore` 是白名单模式（默认全忽略、逐个 `!` 放行）：新增源文件/测试/工具脚本必须手动加白名单，否则不会被 git 跟踪。
@@ -49,10 +50,12 @@ Windows 系统托盘小工具：实时显示 MCHOSE 鼠标（K7 V2 Ultra+）与�
 - 单实例靠命名互斥量 `MCHOSEBattery_SingleInstance`；`--selftest` 故意绕过守卫，改 `main()` 时别破坏这一点。
 - 深色托盘菜单走 uxtheme 未公开接口 135/136（SetPreferredAppMode / FlushMenuThemes），必须在主线程调用。
 - 真机行为（HID 协议、蓝牙缓存、固件推送）单测覆盖不了，改动读取层后至少跑一次 `--selftest` 并真机观察。
-- 本机为 200% 高分屏缩放环境，浮窗尺寸改动按"逻辑像素 × DPI 缩放系数"处理（见 float_window.py 设计令牌）。
+- 浮窗尺寸按"逻辑像素 × 实际 DPI 缩放系数 × 用户档位"处理，系数保留小数（见 float_window.py 设计令牌）；本次真机诊断测得 175%，200% 也已做渲染验证。
 
-## 待人工确认
+## 当前维护说明
 
-- README"使用"一节仍写低电量 ≤20% 弹通知、回 25% 重布防；代码（`LOW_BATTERY=15` / `REARM_HYSTERESIS=5`，commit 69f885e）已是 15% / 20%，README 待同步。
-- `__version__ = "3.1"`，但提交历史已出现 v3.1.1 修复及后续 tune，版本号未跟进。
-- `tray_icon.py` 当前未接入，是保留作备选还是删除，待定。
+- 当前版本 `3.2`；低电量 ≤15% 连续三次提醒，恢复至 >20% 重新布防，未知读数打断连续计数。
+- 蓝牙正常缓存 120 秒、失败重试 15 秒；历史间歇性超时需要结合新的详细日志持续观察。
+- 键盘推送缓存最长采用 24 小时，接收器缺失或已知断链时不采用；尚无本次推送则标为“2.4G 缓存”。
+- `--selftest` 不创建监听线程；正常退出等待 HID 读取/监听线程结束，禁止在 DLL 卸载后继续访问句柄。
+- `tray_icon.py` 保留作备选，当前未接入；`widget_diag.py` 与纯函数回归测试已纳入 Git 白名单。

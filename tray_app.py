@@ -8,7 +8,7 @@
     python tray_app.py --smoke    # 启动托盘 5 秒后自动退出(冒烟测试)
     python tray_app.py --version  # 版本号
 """
-__version__ = "3.1"
+__version__ = "3.2"
 
 import ctypes
 import sys
@@ -24,7 +24,6 @@ import float_window
 import log
 
 log_ = log.get_logger("tray")
-log.get_logger("battery")  # 确保根日志配置先于任何子 logger 使用
 
 POLL_SECONDS = 5
 LOW_BATTERY = 15
@@ -47,7 +46,7 @@ def _font(size):
 
 
 def draw_icon(percent, charging=False):
-    """电量数字托盘图标: 绿>50 橙20-50 红<=20, 未知灰色 --。"""
+    """电量数字托盘图标: 绿>50 橙16-50 红<=15, 未知灰色 --。"""
     img = Image.new("RGBA", (64, 64), (0, 0, 0, 0))
     d = ImageDraw.Draw(img)
     if percent is None:
@@ -71,6 +70,17 @@ def draw_icon(percent, charging=False):
     return img
 
 
+def low_battery_transition(percent, streak, notified):
+    """纯状态转换：未知读数打断连续确认，超过恢复阈值后重新布防。"""
+    if percent is None:
+        return 0, notified, False
+    if percent > LOW_BATTERY:
+        return 0, False if percent > LOW_BATTERY + REARM_HYSTERESIS else notified, False
+    streak = min(streak + 1, LOW_CONFIRM)
+    notify = streak >= LOW_CONFIRM and not notified
+    return streak, notified or notify, notify
+
+
 class App:
     def __init__(self):
         self.state = {"mouse": None, "keyboard": None, "ts": 0.0}
@@ -79,6 +89,8 @@ class App:
         self._low_streak = {"mouse": 0, "keyboard": 0}
         self._last_icon_sig = None
         self.notify_enabled = True
+        self._stop_event = threading.Event()
+        self._refresh_lock = threading.Lock()
         cfg = float_window._load_config()
         size = float(cfg.get("size_factor", 1.0)) or 1.0
         if size not in (0.5, 0.65, 1.0, 1.25):  # 旧档位(0.75)映射到新档位
@@ -118,6 +130,7 @@ class App:
 
     def _toggle_notify(self, *_):
         self.notify_enabled = not self.notify_enabled
+        self._low_streak = {"mouse": 0, "keyboard": 0}
 
     def _toggle_widget(self, *_):
         self.widget_flags["visible"] = not self.widget_flags["visible"]
@@ -129,10 +142,19 @@ class App:
         set_autostart(not autostart_enabled())
 
     def _quit(self, *_):
+        self._stop_event.set()
         self.icon.stop()
 
     # ---- 核心 ----
     def refresh(self):
+        if self._stop_event.is_set() or not self._refresh_lock.acquire(blocking=False):
+            return
+        try:
+            self._refresh_once()
+        finally:
+            self._refresh_lock.release()
+
+    def _refresh_once(self):
         try:
             self.state["mouse"] = battery.read_mouse()
         except Exception:
@@ -169,37 +191,41 @@ class App:
 
     def _low_battery_check(self):
         if not self.notify_enabled:
+            self._low_streak = {"mouse": 0, "keyboard": 0}
             return
         for name, key, notified_flag in (("鼠标", "mouse", "low_notified"),
                                          ("键盘", "keyboard", "kb_low_notified")):
             st = self.state.get(key)
             p = st.get("percent") if st else None
+            streak, notified, notify = low_battery_transition(
+                p, self._low_streak[key], getattr(self, notified_flag))
+            self._low_streak[key] = streak
+            setattr(self, notified_flag, notified)
             if p is None:
                 continue
             if p <= LOW_BATTERY:
-                self._low_streak[key] += 1
                 log_.info("%s 低读数 #%d: %d%% (source=%s)",
-                          name, self._low_streak[key], p, st.get("source"))
-                if self._low_streak[key] >= LOW_CONFIRM and not getattr(self, notified_flag):
-                    setattr(self, notified_flag, True)
+                          name, streak, p, st.get("source"))
+                if notify:
                     log_.info("%s 低电量提醒(已连续确认): %d%%", name, p)
                     try:
                         self.icon.notify(f"{name}电量 {p}%，请及时充电", "MCHOSE 低电量提醒")
                     except Exception:
-                        pass
-            else:
-                self._low_streak[key] = 0
-                if p > LOW_BATTERY + REARM_HYSTERESIS:
-                    setattr(self, notified_flag, False)
+                        log_.exception("低电量通知失败")
 
     def loop(self):
-        while True:
+        while not self._stop_event.is_set():
             self.refresh()
-            time.sleep(POLL_SECONDS)
+            self._stop_event.wait(POLL_SECONDS)
 
     def run(self):
-        threading.Thread(target=self.loop, daemon=True).start()
-        self.icon.run()
+        worker = threading.Thread(target=self.loop, name="battery-poll")
+        worker.start()
+        try:
+            self.icon.run()
+        finally:
+            self._stop_event.set()
+            worker.join()  # 等待正在执行的 HID 查询/蓝牙扫描结束后才退出进程
 
 
 # ---- 开机自启 (HKCU Run) ----
@@ -259,31 +285,34 @@ def main():
         return
     if "--selftest" in sys.argv:
         # 诊断模式: 不需要托盘/监听, 也不受单实例守卫限制(运行中的实例不影响)
-        app = App()
-        app.refresh()
-        m, k = app.state["mouse"], app.state["keyboard"]
+        m, k = battery.read_mouse(), battery.read_keyboard(start_listener=False)
         print("鼠标:", m)
         print("键盘:", k)
         print("图标渲染:", "OK" if draw_icon(85) else "FAIL")
-        print("浮窗渲染:", "OK" if float_window.render_card(app.state) else "FAIL")
+        print("浮窗渲染:", "OK" if float_window.render_card({"mouse": m, "keyboard": k}) else "FAIL")
         return
     if not _single_instance_guard():
         log_.warning("已有实例在运行, 退出")
         return
     _enable_dark_menus()
     log_.info("MCHOSE Battery v%s 启动", __version__)
-    battery.start_keyboard_listener()  # 键盘电量推送常驻监听
     app = App()
-    if "--smoke" in sys.argv:
-        threading.Thread(target=lambda: (time.sleep(5), app._quit()), daemon=True).start()
-        threading.Thread(target=float_window.run_widget,
-                         args=(lambda: app.state, app.widget_flags), daemon=True).start()
+    widget = threading.Thread(target=float_window.run_widget,
+                              args=(lambda: app.state, app.widget_flags), name="battery-widget")
+    try:
+        battery.start_keyboard_listener()  # 键盘电量推送常驻监听
+        widget.start()
+        if "--smoke" in sys.argv:
+            threading.Timer(5, app._quit).start()
         app.run()
+    finally:
+        app.widget_flags["stop"] = True
+        if widget.ident is not None:
+            widget.join()
+        battery.stop_keyboard_listener()
+        log_.info("MCHOSE Battery 正常退出")
+    if "--smoke" in sys.argv:
         print("smoke ok")
-        return
-    threading.Thread(target=float_window.run_widget,
-                     args=(lambda: app.state, app.widget_flags), daemon=True).start()
-    app.run()
 
 
 if __name__ == "__main__":
